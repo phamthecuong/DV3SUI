@@ -1,0 +1,16 @@
+
+<div id="dropdownSplitsPresets" ng-class="{'open':showSplitsPresets}">
+    <div class="bg" ng-click="showSplitsPresets=false;"></div>
+    <div class="box">
+        <div ng-repeat="split in splitsPresets track by $index" 
+             class="item" 
+             ng-class="{'active':$index==activeSplitsIndex}"
+             ng-click="changeActiveSplits($index);">
+            <div ng-repeat="pane in split" 
+                 class="pane"
+                 style="width: {{ pane.layout.w }}; height: {{ pane.layout.h }}; top: {{ pane.layout.t }}; left: {{ pane.layout.l}};">
+            </div>
+        </div>
+    </div>
+</div>
+

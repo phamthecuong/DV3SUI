@@ -1,0 +1,61 @@
+<div id="info-menu" ng-class="{'open':showInfoMenuPopup}">
+  <div class="bg" ng-click="showInfoMenuPopup=false;handleClose();"></div>
+  <div class="box">
+    <div ng-show="!showStreamStatsLoader" class="" style="height: 100%; display: flex; flex-flow: column nowrap;">
+      <div class="box-header">
+        {{"streamInformation" | translate}}
+      </div>
+      <div class="hoz-divider-bar"></div>
+      <div class="col-xs-12 flex-1" ng-scrollable>
+        <div ng-repeat="(key, infoMenuData) in statsInfo" class="cam-group flex flex-cols">
+          <div class="header flex flex-row v-centered" ng-click="showDetail = !showDetail">
+            <div class="icon"><i class="icons8-video-call"></i></div>
+            <div class="lbl">{{ key }}</div>
+          </div>
+          <div class="list" ng-if="showDetail">
+            <div class="stat-content">
+              <table>
+                <tr ng-if="infoMenuData.frameWidth != null">
+                  <td > {{"frameWidth" | translate}}: </td> <td> {{ infoMenuData.frameWidth }} px</td>
+                </tr>
+                <tr ng-if="infoMenuData.frameHeight != null">
+                  <td > {{"frameHeight" | translate}}: </td> <td> {{ infoMenuData.frameHeight }} px</td>
+                </tr>
+                <tr ng-if="infoMenuData.frameRateInput != null">
+                  <td > {{"fps" | translate}}: </td> <td> {{ infoMenuData.frameRateInput }} </td>
+                </tr>
+                <tr ng-if="infoMenuData.codec != null">
+                  <td > {{"codec" | translate}}: </td> <td> {{ infoMenuData.codec }} </td>
+                </tr>
+                <tr ng-if="infoMenuData.bandwidth != null && infoMenuData.bandwidth != 0">
+                  <td > {{"bandWidth" | translate}}: </td> <td> {{ infoMenuData.bandwidth }} Mb/s </td>
+                </tr>
+                <tr ng-if="infoMenuData.bitrate != null">
+                  <td > {{"bitrate" | translate}}: </td> <td> {{ infoMenuData.bitrate }}  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="!showStreamStatsLoader" class="box-footer">
+        <div>
+          {{"systemInformation" | translate}}
+        </div>
+        <div class="hoz-divider-bar"></div>
+        <div class="stat-content">
+          <table>
+            <tr ng-if="feVersion">
+              <td > {{"frontendVersion" | translate}}: </td> <td> {{ feVersion }} </td>
+            </tr>
+            <tr ng-if="beVersion">
+              <td > {{"backendVersion" | translate}}: </td> <td> {{ beVersion }} </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+    <div ng-if="showStreamStatsLoader" class="loader" style="top: calc(50% - 15px); left: calc(50% - 15px);"></div>
+  </div>
+</div>

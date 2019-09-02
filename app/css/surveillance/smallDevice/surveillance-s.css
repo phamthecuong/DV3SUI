@@ -1,0 +1,54 @@
+@media screen and (max-width: 900px) {
+	#videoPanes .timeline-container,
+    .video-pane-overlay-container .displayTimeline {
+		display: none;
+	}
+
+  .video-pane-overlay-container:hover .videoPane-toolbar-bottom {
+    bottom: 22px;
+    opacity: 1;
+  }
+
+  .videoPane-toolbar-top {
+    font-size: 24px;
+  }
+
+  .mode-group {
+    font-size: 20px;
+  }
+
+  #videoPane_toolbar_top .options-group-right,
+  #videoPane_toolbar_top .options-group-left{
+    margin: 0;
+  }
+
+  .video-pane .step-forward-btn {
+    display: none;
+  }
+
+  .video-pane-overlay-container:hover .control-screen {
+    z-index: 2;
+    opacity: 1;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
+}
+
+@media screen and (max-width: 450px) {
+	.toolbar-replay .touch .ctrl-btn {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+}
+
+@media screen and (max-width: 320px) {
+    .toolbar-replay .touch .ctrl-btn {
+        width: 30px;
+    }
+}

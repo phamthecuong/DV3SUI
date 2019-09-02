@@ -1,0 +1,14 @@
+{
+  "name": "dv3sel",
+  "version": "0.0.1",
+  "description": "dv3sel",
+  "author": {
+    "name": "tung_tvt",
+    "email": "trinhvutung87@gmail.com"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "s-is": "^1"
+  }
+}

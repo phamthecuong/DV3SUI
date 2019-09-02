@@ -1,0 +1,15 @@
+<div class="flex flex-cols h-centered v-started">
+    <div class="flyout-options-header flex flex-rows v-centered h-started">
+        {{"camera_filters" | translate}}
+    </div>
+    
+    <div class="flyout-options-body flex flex-cols v-started h-centered">
+        <div class="item" ng-repeat="item in data">
+            <div class="flex flex-rows v-centered h-started"><span class="{{getItemIcon(item.name)}}"></span><span style="text-transform: capitalize;">{{item.name}}</span></div>
+            <input type="range" min="0" max="200" ng-model="item.value" ng-change="updateOption(item.name)">
+            <div class="button" ng-click="resetOption(item.name)">{{"auto" | translate}}</div>
+        </div>
+    </div>
+    
+    <span class="tooltip-arrow"></span>
+</div>

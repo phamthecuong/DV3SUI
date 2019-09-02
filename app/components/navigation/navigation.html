@@ -1,0 +1,40 @@
+<div class="navigation-container flex flex-cols v-started">
+    <div class="navigation-header flex flex-rows v-centered">
+        <div class="icon icons8-gender-neutral-user"></div>
+        <div>
+            <div>{{ currentPerson.firstname }} {{ currentPerson.lastname }} </div>
+            <div style="font-size: 10px;">{{ currentPerson.email }}</div>
+        </div>
+        <div ng-click="logout()" class="fa fa-power-off"></div>
+    </div>
+    <ul class="navigation-menu">
+        <li class="item" ui-sref-active="active">
+            <a  ui-sref="root.inbox" >
+              <div class="icon icons8-new-post" aria-hidden="true"></div>
+              <div class="title">{{"inbox" | translate}}</div>
+            </a>
+        </li>
+        <li class="item" ui-sref-active="active">
+          <a ui-sref="root.browser" >
+            <div class="icon icons8-mind-map" aria-hidden="true"></div>
+            <div class="title">{{"browser" | translate}}</div>
+          </a>
+        </li>
+        <li class="item" ui-sref-active="active">
+          <a ui-sref="root.surveillance" >
+            <div class="icon icons8-detective" aria-hidden="true"></div>
+            <div class="title">{{"surveillance" | translate}}</div>
+          </a>
+        </li>
+        <!-- <li class="item" ui-sref="root.setting" ui-sref-active="active">
+           <div class="icon icons8-settings-3" aria-hidden="true"></div>
+            <div class="title">{{"setting" | translate}}</div>
+        </li> -->
+        <li class="item" ui-sref-active="active" >
+          <a ui-sref="root.setting" >
+           <div class="icon icons8-settings-3" aria-hidden="true"></div>
+            <div class="title">{{"preferences" | translate}}</div>
+          </a>
+        </li>
+    </ul>
+</div>

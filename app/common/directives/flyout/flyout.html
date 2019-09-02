@@ -1,0 +1,92 @@
+<div class="flyout flex v-centered h-centered">
+    <div class="flyout-icon-event flex v-centered h-centered" ng-class="{'flyout-icon-event-style': isShowFlyout}">
+        <div class="video-rectangle-container flex v-centered h-centered" ng-show="eventType==='event_video'" ng-click="$event.stopPropagation()">
+            <div class="video-rectangle-length"></div>
+            <div class="gripper-start flex v-centered h-centered">
+                <div class="border-start"></div>
+                <div class="expand"></div>
+            </div>
+            <div class="gripper-end flex v-centered h-centered">
+                <div class="border-end"></div>
+                <div class="expand"></div>
+            </div>
+        </div>
+
+        <div class="icon-event-timeline flex v-centered h-centered" ng-class="{'count-event-container': numberOfEvent>1 || timeEventType==='event_past' || timeEventType==='event_future'}">
+            <i class="fa {{eventIcon}}" style="line-height: 13px;"></i>
+            <span ng-if="numberOfEvent>1 || timeEventType==='event_past' || timeEventType==='event_future'">{{numberOfEvent}}</span>
+        </div>
+
+        <div class="tooltip-custom flex flex-cols" ng-hide="isShowFlyout || numberOfEvent>1 || timeEventType==='event_future' || timeEventType==='event_past'">
+            <div style="overflow-y: auto; width: 100%;">
+                <div class="event-item flex flex-rows v-centered" ng-repeat="item in eventGroup track by $index">
+                    <div class="icon"><i class="fa {{getItemIcon(item.typeEvent)}}"></i></div>
+                    <div class="flex flex-cols v-started">
+                        <span>{{item.time}} - {{item.title}} </span>
+                        <span>{{item.content}}</span>
+                    </div>
+                </div>
+            </div>
+            <span class="tooltip-arrow"></span>
+        </div>
+
+        <div class="flyout-popup flex flex-cols v-centered h-centered" ng-show="isShowFlyout" ng-click="$event.stopPropagation()" ng-class="{'show-popup':isShowFlyout}">
+            <div class="event-list" ng-if="(numberOfEvent>1 || timeEventType==='event_past' || timeEventType==='event_future') && !isShowDetail">
+                <div class="event-list-container">
+                    <div class="event-item flex flex-rows v-centered" ng-repeat="item in eventGroup track by $index" ng-click="isShowPopup($index)">
+                        <div class="icon"><i class="fa {{getItemIcon(item.typeEvent)}}"></i></div>
+                        <div class="flex flex-cols v-started">
+                            <span>{{item.time}} - {{item.title}}</span>
+                            <span>{{item.content}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- show detail -->
+            <div class="flex flex-cols" ng-if="isShowDetail">
+                <div class="flyout-popup-toolbar flex flex-rows v-centered">
+                    <div class="title flex flex-cols">
+                        <span>{{eventTime}}</span>
+                        <span>{{eventTitle}}</span>
+                    </div>
+                    <div class="option" ng-if="!isEditFlyout">
+                        <i class="icon icons8-edit" ng-click="editFlyout()"></i>
+                        <i class="icon icons8-film"></i>
+                        <i class="icon icons8-more"></i>
+                    </div>
+                    <div class="option-confirm" ng-if="isEditFlyout" ng-click="editFlyout()">
+                        <div class="btn btn-confirm">OK</div>
+                    </div>
+                </div>
+                <div class="flyout-popup-content flex flex-cols h-centered">
+                    <div class="description" ng-show="!isEditFlyout">{{eventContent}}</div>
+                    <div class="flex flex-cols v-centered" ng-show="isEditFlyout" style="width:100%;">
+                        <input class="form-control" ng-model="eventTitle" style="margin-bottom: 5px;">
+                        <textarea class="form-control" ng-model="eventContent"></textarea>
+                    </div>
+
+                    <!-- display for image -->
+                    <div class="gallerry-event-image" ng-if="eventType==='event_image' && !isEditFlyout" ng-scrollable="{scrollX:'none',scrollY:'right'}">
+                        <div ng-repeat="item in eventImages">
+                            <img data-ng-src="{{'data:image/jpg;base64, ' + item}}">
+                        </div>
+                    </div>
+                    <!-- display for image snapshot -->
+                    <div class="gallerry-event-image" ng-if="eventType==='event_snapshot' && !isEditFlyout" ng-scrollable="{scrollX:'none',scrollY:'right'}">
+                        <div ng-repeat="item in eventImages">
+                            <img data-ng-src="{{item}}">
+                        </div>
+                    </div>
+                    <!-- display for video -->
+                    <div ng-if="eventType === 'event_video' && !isEditFlyout" class="gallerry-item" ng-scrollable>
+                        <div ng-repeat="item in eventVideos" ng-click="selectVideo($index)" ng-class="{'selected_border': $index === selectedVideoIdx}">
+                            <video class="replay_video" width="100%" height="100%" ng-src="{{item.url}}" controls></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="tooltip-arrow"></span>
+        </div>
+    </div>
+</div>

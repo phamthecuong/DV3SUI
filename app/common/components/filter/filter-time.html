@@ -1,0 +1,25 @@
+<div class="dcontent flex flex-cols h-centered">
+    <div class="item">
+        <div>From</div>
+        <div class="input-group">
+            <input  type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="$ctrl.startDate" is-open="$ctrl.isOpens[0]" readonly/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="$ctrl.openCalendar($event, 0)"><i class="fa fa-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+    
+    <div style="height: 10px;"></div>
+    
+    <div class="item">
+        <div>To</div>
+        <div class="input-group">
+            <input type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="$ctrl.endDate" is-open="$ctrl.isOpens[1]" readonly/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="$ctrl.openCalendar($event, 1)"><i class="fa fa-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+

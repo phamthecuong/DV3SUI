@@ -1,0 +1,126 @@
+body {
+    background-color: var(--shark-bg);
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+       -khtml-user-select: none;    /* Konqueror */
+         -moz-user-select: none;      /* Firefox */
+          -ms-user-select: none;       /* Internet Explorer/Edge */
+              user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+.btn.inactive {
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.dropdown-options-container {
+    border: 1px solid #2b2c30;
+    background-color: var(--panther-bg);
+    border-radius: 4px;
+    padding: 0;
+}
+
+.dropdown-options-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-options-container li {
+    list-style: none;
+    margin: 0;
+    padding: 5px 10px;
+    background-color: var(--panther-bg);
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+}
+
+.dropdown-options-container li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-options-container li:hover {
+    background-color: var(--shark-bg);
+}
+
+.dropdown-options-container li.active {
+    background-color: var(--shark-bg);
+    color: var(--blue);
+}
+
+.btngroup {
+    border: 1px solid transparent;
+}
+
+.btngroup.selected {
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+}
+
+.btngroup .button {
+    background-color: var(--greyhound-bg);
+    padding: 4px 6px;
+    white-space: nowrap;
+}
+
+.btngroup .button:hover {
+    background-color: var(--tuna-bg);
+}
+
+.btngroup .button.active {
+    background-color: var(--shark-bg);
+    color: var(--blue);
+}
+
+.btngroup .button.active > i {
+    color: var(--blue);
+}
+
+.btngroup .button.dd {
+    margin-left: 1px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btngroup > :first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.btngroup > :last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.btn-default {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.tpane .btn-default{
+    height: auto;
+    width: auto;
+    min-width: auto !important;
+    max-width: none !important;
+    font-size: 14px;
+}
+
+.inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

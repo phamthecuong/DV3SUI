@@ -1,0 +1,11 @@
+<div class="view-options">
+    <div class="item1">{{"view_options" | translate}}</div>
+    <div class="item2 flex flex-rows v-centered">
+        <div class="option zoom" ng-click="zoomCamera(0.25)"><i class="fa fa-search-plus icon"></i></div>
+        <div class="option zoom" ng-click="zoomCamera('-0.25')"><i class="fa fa-search-minus"></i></div>
+        <div class="brightness" ng-click="displayOptionsFlyout(); $event.stopPropagation();">
+            <i class="fa fa-sun-o"></i>
+            <flyout-options ng-show="isShowFlyout" class="flyout-options" ng-click="$event.stopPropagation()"></flyout-options>
+        </div>
+    </div>
+</div>

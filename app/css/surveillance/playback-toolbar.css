@@ -1,0 +1,113 @@
+.speed {
+    position: relative;
+}
+.speed-icon-l,
+.speed-icon-r {
+    font-size: 27px;
+}
+.speed-time-l,
+.speed-time-r {
+    position: absolute;
+    top: 20px;
+    font-size: 10px;
+}
+
+.playback-control .item1 {
+    height: 20px;
+}
+
+.playback-control .item2 {
+    height: 65px;
+    border-radius: 3px;
+    background-color: var(--shark-bg);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    padding: 0 10px;
+}
+
+.playback-control .item2 .ctrl-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.playback-control .item2 .ctrl-btn > i {
+    font-size: 24px;
+    line-height: 23px;
+    padding: 0px;
+}
+
+.replay .playback-control .item2 .ctrl-btn:hover {
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+}
+
+.replay .playback-control .item2 .ctrl-btn:hover .icon {
+    color: var(--yellow);
+}
+
+.replay .playback-control .item2 .ctrl-btn.active {
+    background-color: transparent;
+}
+
+.replay .playback-control .item2 .ctrl-btn.active .icon{
+    color: var(--yellow);
+}
+
+/* -------------------------------------------------------------- */
+
+.live .toolbar-replay, .replay .toolbar-live {
+    display: none;
+}
+
+.toolbar-replay .touch {
+    display: none;
+}
+
+.container-btn .ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-btn .ctrl-btn .icon {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 23px;
+}
+
+.container-btn {
+    width: 100%;
+    height: 100%;
+}
+
+.media-btn-group .container-btn .ctrl-btn {
+    width: 34px;
+    height: 34px;
+}
+
+.media-btn-group .container-btn .ctrl-btn.active {
+    background-color: var(--shark-bg);
+}
+
+.media-btn-group .container-btn .ctrl-btn:hover > .icon {
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.media-btn-group .container-btn .ctrl-btn.active .icon {
+    color: var(--blue);
+}
+
+.toolbar-live .image-custom-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.toolbar-live .image-custom-icon:hover {
+  background-position-x: -34px !important;
+}
+
+/* -------------------------------------------------------------- */

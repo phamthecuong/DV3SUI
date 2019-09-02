@@ -1,0 +1,44 @@
+
+<div class="custom-dialog">
+    <div class="dialog-header">
+        <div class="item flex flex-rows v-centered" >
+            <span class="fa {{eventIcon}}"></span>{{headerTitle}}
+        </div>
+    </div>
+    <form name="formDialog" id="formDialog">
+        <div class="dialog-content">
+            <div class="camera-event" ng-if="eventType === 'event_image' || eventType === 'event_video'">
+                <div class="webcam-container">
+                    <webcam channel="webcam.channel" on-streaming="webcam.onSuccess()" on-error="webcam.onError(err)" on-stream="webcam.onStream(stream)"></webcam>
+                    <nav mfb-menu-custom position="tr" label="timeRecord" effect="zoomin" active-icon="{{activeIcon}}" resting-icon="{{restingIcon}}" ng-click="startCreateEvent()" class="flb-custom" bgcolor="{{bgcolorFlb}}" type="{{eventType}}">
+                    </nav>
+                    
+                    <!-- relay video -->
+                    <video class="replay_video" autoplay="" ng-show="selectedItemIdx !== -1" controls></video>
+                    <canvas ng-hide="true" id="snapshot_surveillance"></canvas>
+                </div>
+                
+                <div class="gallerry" ng-scrollable="{scrollX:'none', scrollY:'right', preventWheelEvents: true}" >
+                    <div  class="gallerry-item" ng-repeat="item in gallerry track by item.pos" ng-click="showRecordVideo(item.pos)" ng-class="{'selected_border': $index === selectedItemIdx}">
+                        <i class="icon icons8-delete-2 delete-item" ng-click="removeEvent(item.pos)"></i>
+                        <i class="icon icons8-play video-item" ng-if="eventType === 'event_video'"></i>
+                        <img data-ng-src="{{'data:' + item.type + ';base64,' + item.imageUrl}}">
+                    </div>
+                </div>
+            </div>
+            <div class="tooltip-custom tooltip-requried" ng-if="mediaRequried">
+                <div><span >{{"the_media_is_required" | translate}}</span></div>
+                <span class="tooltip-arrow"></span>
+            </div>
+            <input type="file" accept="audio/*;capture=microphone" ng-if="eventType === 'event_audio'">
+            <input name="title" class="form-control" ng-model="title" placeholder="{{'title' | translate}}" required>
+            <textarea name="content" class="form-control content" ng-model="content" placeholder="{{'comment' | translate}}" required></textarea>
+            <input autofocus ng-hide="true">
+            <input name="timePicker" class="form-control time-picker" ng-model="timePicker" ng-model-options="{ updateOn: 'blur' }" placeholder="{{'select_a_time' | translate}}" moment-picker="timePicker" min-view="year" format="YYYY-MM-DD HH:mm:ss" required pattern="(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})">
+        </div>
+        <div class="dialog-footer">
+            <button class="btn btn-dlm-tb" type="submit" style="margin-right: 10px;" ng-click="insertEvent()"><span class="glyphicon glyphicon glyphicon-ok" style="margin-right: 5px;"></span>{{"insert" | translate}}</button>
+            <button class="btn btn-dlm-tb" type="button" ng-click="closeThisDialog()"><i class="far fa-hand-paper" style="margin-right: 5px;"></i>{{"cancel" | translate}}</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,124 @@
+.surveillance-search {
+    margin-left: -250px;
+    width: 250px;
+    height: calc(100vh - 90px);
+    border-right: 1px solid black; 
+    background: var(--panther-bg); 
+    font-size: 14px;
+    transition: all .3s ease;
+    z-index: 3;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.surveillance-search.collapsed {
+    margin-left: -16.6667%;
+}
+
+.surveillance-search > div:nth-child(1) {
+    height: 100%;
+}
+
+.surveillance-search .list-group {
+    height: 100%;
+}
+
+.surveillance-search .list-group-item {
+    padding: 0px;
+}
+
+.surveillance-search .list-group-item:hover {
+    background: none
+}
+
+.surveillance-search .list-group-title {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.surveillance-search .tpane{
+	-webkit-transition: height 0.3s linear;
+	-moz-transition: height 0.3s linear;
+	transition: height 0.3s linear;
+	height: 0px;
+	overflow: hidden;
+}
+
+.surveillance-search .tshow {
+	overflow: visible;
+}
+
+.surveillance-search .tag{
+    font-size: 14px;
+    font-weight: normal;
+    float: left;
+    margin: 0px 5px 5px 0px;
+    cursor: pointer;
+    padding: 5px;
+    webkit-box-shadow: 1px 1px 1px 0px rgba(79,79,79,1);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(79,79,79,1);
+    box-shadow: 1px 1px 1px 0px rgb(47, 47, 47);
+    text-transform: uppercase;
+}
+.surveillance-search .tag:hover{
+    background: var(--shark-bg);
+}
+
+.surveillance-search .dcontent .item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.surveillance-search .dcontent .item > div:nth-child(1) {
+    width: 25%;
+}
+
+.surveillance-search .dcontent .item > div:nth-child(2) {
+    width: 75%;
+}
+
+.surveillance-search .dcontent .item > div:nth-child(2) > span > button {
+    margin: 0px;
+    padding: 4px;
+    width: 28px;
+    background-color: var(--panther-bg);
+}
+
+.datetime-picker-dropdown{
+	max-width: 352px;
+	min-width: 250px;
+	position: fixed;
+    top: 50%;
+	left: 50% !important;
+	transform: translate(-50%, -50%);
+	border: 1px solid var(--blue);
+    border-radius: 2px;
+    overflow: hidden
+}
+
+.date-picker-menu:focus, #tpane3 table:focus, #tpane3 .uib-datepicker:focus{
+	outline:none !important;
+}
+
+.uib-datepicker{
+	margin: 0px -5px -5px -5px;
+}
+
+#tpane3 .btn-default{
+    margin-top: 0;
+    padding: 4px 11px;
+}
+#tpane3 input{
+	font-size: 13px;
+}
+
+.ui-select-container:focus{
+	outline: none !important;
+}
+
+.list-group-item{
+	clear: both;
+	overflow: hidden;
+}

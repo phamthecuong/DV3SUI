@@ -1,0 +1,247 @@
+/* config*/
+.vh100{
+    height: 100vh;
+}
+.vw100 {
+    width: 100vw;
+}
+.vw20 {
+    width: 20vw;
+}
+.vw30 {
+    width: 30vw;
+}
+.vw60 {
+    width: 60vw;
+}
+
+.outer-container{
+    transition: 0.4s;
+    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position:relative;
+    /*height: 100vh;*/
+    width: 100%;
+}
+body{
+    padding: 0px;
+}
+.btn{
+    background: #46484d;
+    color: rgba(255,255,255,.75);
+}
+.btn-c{
+    background: #65676f;
+    padding: 3px 10px;
+}
+.btn:active, .btn:active{
+    box-shadow: none;
+}
+
+.btn:active, .btn:focus, .btn:hover{
+    color: white;
+}
+.btn-c:hover{
+    background: #2b2c30;
+}
+.menu-c{
+    padding: 4px 10px;
+}
+.btn-uc{
+    background: #65676f;
+    padding: 3px 8px;
+}
+.navbar-local{
+    z-index: 1;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.tab-content{
+    font-size: 13px;
+}
+
+.navi-contain{
+    display: none;
+    width: 900px;
+    background: #46484d;
+    padding: 20px;
+    position: absolute;
+    border-radius: 3px;
+    top: 55px;
+    left: 10px;
+    z-index: 1000;
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.55);
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.55);
+    border: 1px solid #1cbbff;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
+}
+.navi-contain .bg{
+    background-color: rgba(0,0,0,0.35);
+    transition: opacity 200ms linear;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.open-app{
+    width: 312px;
+}
+.start-task{
+    width: 468px;
+}
+.nav-title{
+    margin-bottom: 15px;
+}
+.navi-item{
+    width: 150px;
+    height: 100px;
+    border-radius: 3px;
+    background: #2b2c30;
+    margin: 3px;
+    float:left;
+    text-align: center;
+    cursor: pointer;
+}
+.navi-item:before {
+    content: '\200B';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.naviactive{
+    color: #1cbbff;
+}
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 15px;
+}
+.centered i, .centered span{
+    font-size: 25px;
+}
+.navi-item:hover{
+    color: #1cbbff;
+
+}
+.tip{
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    /* margin: -10px auto 0; */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top: 1px solid #1cbbff;
+    border-left: 1px solid #1cbbff;
+    background: #46484d;
+    top: -6px;
+    position: absolute;
+    left: 29px;
+}
+
+.btn-navi, .btn-sidebar{
+    display: none;
+}
+
+.list-group{
+    margin-bottom: 0px;
+}
+.lactive{
+    background: #2b2c30;
+    color: #1cbbff !important;
+    box-shadow: none !important;
+}
+div[class^="col"]{
+    padding: 0px !important;
+}
+
+.list-group-item a:hover{
+    color: #1cbbff
+}
+
+.btngroup{
+        justify-content: center;
+}
+
+.sideopen{
+    margin-left: 0px;
+}
+.navbar-default{
+     min-width: 320px;
+}
+.navbar-default .navbar-nav > li > a:focus{
+    background:#46484d;
+}
+
+.tab-container li > a .icons8-delete {
+    display: inline-block;
+    padding: 10px;
+    font-size: 11px;
+    margin-right: 3px;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    border-radius: 100%;
+}
+
+.active{
+    border-top-color: #1cbbff;
+    background: #46484d;
+}
+
+.navi-open{
+    display: block;
+    -webkit-animation: slide-down .3s ease-out;
+    -moz-animation: slide-down .3s ease-out;
+}
+
+@-webkit-keyframes slide-down {
+      0% { -webkit-transform: translateY(-5%); }
+    100% { -webkit-transform: translateY(0); }
+}
+
+@-moz-keyframes slide-down {
+      0% { -moz-transform: translateY(-5%); }
+    100% { -moz-transform: translateY(0); }
+}
+
+.nonestyle:hover{
+    background-color: #2b2c30 !important;
+}
+.nonestyle i{
+    cursor: pointer;
+}
+
+.mactive{
+    background: #1cbbff;
+    opacity: 1;
+    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10000 !important;
+}
+.mactive i{
+    color: #2b2c30;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.line{
+    border-left: 1px solid #65676f;
+    display: inline;
+    vertical-align: middle;
+    margin: 0px 15px 0px 10px;
+}
+
+#sideright.collapsed{
+    margin-right: -25%;
+}

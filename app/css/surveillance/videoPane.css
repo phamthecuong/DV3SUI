@@ -1,0 +1,444 @@
+.video-pane .video-pane-overlay-container {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+}
+
+/* ----------------------------------------------------- */
+
+.videoPane-toolbar-top {
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    top: -34px;
+    z-index: 2;
+    opacity: 0;
+    background-color: rgba(101, 103, 111, 0.75);
+    padding: 0px 10px;
+    flex-flow: row-reverse nowrap;
+    transition: all linear 0.5s;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    pointer-events: none;
+}
+
+.video-pane-overlay-container:hover .videoPane-toolbar-top {
+    top: 2px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#videoPane_toolbar_top .options-group-left {
+    height: 100%;
+}
+
+.options-group-left .scrollable-content {
+    height: 100%;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.options-group-left .item {
+    width: 34px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#videoPane_toolbar_top .mode-group {
+    height: 100%;
+    margin: 0px 5px;
+}
+
+#videoPane_toolbar_top .mode-group > div {
+    cursor: pointer;
+}
+
+#videoPane_toolbar_top .options-group-right {
+    height: 100%;
+    flex-flow: row-reverse nowrap;
+    margin: 0px 5px;
+}
+
+.options-group-right .item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.options-group-right .item:hover {
+    color: var(--blue);
+}
+
+.options-group-right .channel-group {
+    /*margin-right: 10px;*/
+}
+
+.options-group-right .channel-group > div:nth-child(1).active, .options-group-right .channel-group > div:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+
+.options-group-right .channel-group .dropdown-btn {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.options-group-right .dropdown-channel.response {
+    display: none;
+}
+
+.channel-group .dropdown-channel {
+    position: absolute;
+    top: 35px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
+    min-width: 40px;
+    min-height: 30px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.channel-group .dropdown-channel > li {
+    margin: 0px;
+    max-width: 90px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgba(101, 103, 111, 0.75);
+}
+
+.channel-group .dropdown-channel > li > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channel-group .dropdown-channel > li:hover,
+.channel-group .dropdown-channel > li.active {
+    background-color: var(--shark-bg);
+}
+
+.channel-group .dropdown-channel > li:not(:last-of-type) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* -------------------- options-group-left -------------------- */
+
+.options-group-left .display-icon {
+    position: relative;
+}
+
+.options-group-left .display-icon > i {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.options-group-left .display-icon .fa.active,
+.options-group-left .display-icon .fa:hover {
+    color: var(--blue);
+    background: none;
+}
+
+.options-group-left .dropdown-container-event {
+    position: absolute;
+    height: 100%;
+    list-style: none;
+    display: inline-flex;
+    flex-flow: row-reverse nowrap;
+    left: -110px;
+    padding: 0px;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.dropdown-container-event > li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 100%;
+    flex-flow: row nowrap;
+    cursor: pointer;
+}
+
+.dropdown-container-event > li:hover,
+.dropdown-container-event > li:active {
+    color: var(--blue);
+    background-color: var(--shark-bg);
+}
+
+/* ---------- response-layout ---------- */
+
+.options-group-left.response .display-icon > i {
+    display: inline-flex;
+}
+
+.options-group-left.response div.camera-action-btn,
+.options-group-left li.camera-action-btn {
+  display: inline-flex;
+}
+
+.options-group-left.response li.camera-action-btn,
+.options-group-left div.camera-action-btn {
+  display: none;
+}
+
+.options-group-left.response .dropdown-container-event {
+    height: auto;
+    flex-flow: column nowrap;
+    top: 35px;
+    left: -3px;
+    width: 40px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
+    background-color: rgba(101, 103, 111, 0.75);
+}
+
+.options-group-left.response .dropdown-container-event > li {
+    width: 100%;
+    height: 30px;
+}
+
+.options-group-left.response .dropdown-container-event > li:not(:last-child) {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ----------------------------------------------------------- */
+
+
+.video-pane-overlay-container .header .header-drag {
+    position: relative;
+    flex: 1;
+    min-height: 22px;
+}
+
+.video-pane-overlay-container .header .header-drag .drag-pane {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.video-pane-overlay-container .body {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-pane-overlay-container .body .abs {
+    z-index: 1;
+/*    pointer-events: none;*/
+}
+
+.video-pane .video-player {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.video-pane .video-player .rtmp {
+    width: inherit;
+    height: inherit;
+}
+
+.video-pane .body .janus-webrtc {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.video-pane .body .evo-websocket {
+    z-index: 2;
+}
+
+.video-pane .body .janus-webrtc > video {
+    padding: 0px;
+}
+
+.control-screen {
+    display: none;
+}
+
+/* ----------------------------------------------------- */
+
+.videoPane-toolbar-bottom{
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    z-index: 2;
+    opacity: 0;
+    background-color: rgba(101, 103, 111, 0.75);
+    padding: 0px 10px;
+    bottom: -34px;
+    transition: all linear 0.5s;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.video-pane-overlay-container:hover .videoPane-toolbar-bottom {
+    bottom: 22px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#videoPane_toolbar_bottom .media-btn-group {
+    width: 100%;
+    height: 100%;
+}
+#videoPane_toolbar_bottom .view-options-group .active {
+    background-color: var(--shark-bg);
+}
+
+#videoPane_toolbar_bottom .media-btn-group .scrollable-content {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-options-group .item {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-options-group .item:hover {
+    background-color: var(--shark-bg);
+    color: var(--blue);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* ----------------------------------------------------- */
+
+.video-pane .mount-container {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: calc(100% - 22px);
+    transition: background-color 250ms linear;
+    cursor: pointer;
+}
+
+.video-pane .mount-container.hovered {
+    background-color: rgba(28,187,255,0.5);
+}
+
+.video-pane .mount-container .icon {
+    font-size: 2em;
+    opacity: 0.35;
+    transform-origin: center center;
+    transition: all 200ms ease-in-out;
+}
+
+.video-pane .mount-container.hovered .icon {
+    transform: scale(2.5);
+    opacity: 1;
+}
+
+/* ----------------------------------------------------- */
+
+.video-pane .mode-footer > div.camera-name {
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.video-pane .mode-footer {
+    position: absolute;
+    width: 100%;
+    height: 22px;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    white-space: nowrap;
+    line-height: 1em;
+    padding: 0 6px;
+    pointer-events: none;
+    background: var(--greyhound-bg);
+}
+
+.video-pane.live .mode-footer {
+    background: -moz-linear-gradient(left, rgba(0,204,16,0.75) 25%, rgba(0,204,16,0.2) 100%);
+    background: -webkit-linear-gradient(left, rgba(0,204,16,0.75) 25%,rgba(0,204,16,0.2) 100%);
+    background: linear-gradient(to right, rgba(0,204,16,0.75) 25%,rgba(0,204,16,0.2) 100%);
+}
+
+.video-pane.replay .mode-footer {
+    background: -moz-linear-gradient(left, rgba(255,202,56,0.75) 25%, rgba(255,202,56,0.2) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,202,56,0.75) 25%,rgba(255,202,56,0.2) 100%);
+    background: linear-gradient(to right, rgba(255,202,56,0.75) 25%,rgba(255,202,56,0.2) 100%);
+}
+
+.video-pane .mode-footer > div {
+    padding: 0 2px;
+}
+
+.channel-group .list-camera {
+    max-width: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ----------------------------------------------------- */
+
+.video-pane .mode-indicator {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.video-pane .mode-indicator.pane-selected {
+    border: 2px solid silver;
+}
+
+.video-pane.live .mode-indicator.pane-selected {
+    border: 2px solid var(--green);
+}
+
+.video-pane.replay .mode-indicator.pane-selected {
+    border: 2px solid var(--yellow);
+}
+
+/* ----------------------------------------------------- */
+
+.loader {
+    position: absolute;
+    border: 5px solid rgba(243, 243, 243, 0.75);
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid var(--panther-bg);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

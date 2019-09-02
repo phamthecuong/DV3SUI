@@ -1,0 +1,191 @@
+.ngdialog {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.ngdialog-content {
+    width: 400px;
+    background-color: var(--shark-bg) !important;
+    padding: 0px !important;
+    box-shadow: 0px 0px 10px black;
+}
+
+.custom-dialog {
+    color: white;
+    font-size: 13px;
+}
+
+.custom-dialog .dialog-header, .custom-dialog .dialog-footer {
+    width: 100%;
+    background-color: var(--shark-bg);
+    height: 40px;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.custom-dialog .dialog-footer {
+    justify-content: flex-end;
+}
+
+.custom-dialog .dialog-header .item {
+    height: 100%;
+}
+
+.custom-dialog .dialog-header .item > span {
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.custom-dialog .dialog-content {
+    width: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 15px 20px 15px;
+}
+
+.custom-dialog .dialog-content .time-select {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.moment-picker {
+    z-index: 10000;
+    overflow-y: visible;
+}
+
+.dialog-content .content {
+    min-height: 80px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dialog-footer > button {
+    background-color: var(--shark-bg) !important;
+}
+
+.dialog-footer > button:hover {
+    background-color: var(--shark-bg);
+    border: 1px solid var(--blue);
+}
+
+.form-control[readonly] {
+    opacity: 1;
+}
+
+.camera-event {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.camera-event .webcam-container {
+    position: relative;
+    width: 75%;
+    height: 100%;
+}
+
+.camera-event .webcam {
+    overflow: hidden;
+}
+
+.camera-event .gallerry {
+    width: 25%;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2px;
+}
+
+.flb-custom {
+    position: absolute;
+    margin: 0px;
+    top: 150px;
+    right: -28px;
+}
+
+.mfb-component__wrap {
+    width: 56px;
+    height: 56px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.gallerry {
+    overflow-y: auto;
+    max-height: 240px;
+}
+
+.gallerry-item {
+    position: relative;
+}
+
+.gallerry-item:not(:last-of-type) {
+    margin-bottom: 3px;
+}
+
+.gallerry-item > img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallerry-item .icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.gallerry-item .icon:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.delete-item {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+}
+
+.video-item {
+    font-size: 26px;
+    position: absolute;
+    left: calc(50% - 13px);
+    top: calc(50% - 13px);
+}
+
+[data-mfb-label]:after {
+    font-size: 20px;
+    background-color: red;
+    top: 45%;
+}
+
+.selected_border {
+    border: 1px solid blue;
+}
+
+.webcam-container .replay_video {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#snapshot_surveillance {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

@@ -1,0 +1,26 @@
+
+<div class="container-fluid flex flex-rows v-centered">
+    <surveillance-search></surveillance-search>
+
+    <div id="videoPanes" class="flex flex-cols">
+        <div class="frame flex-1">
+            <h1>{{splits.length}}</h1>
+            <div ng-repeat="split in splitVideoPanes track by $index"
+                 class="video-pane-container"
+                 style="width: {{ split.layout.w }}; height: {{ split.layout.h }}; top: {{ split.layout.t }}; left: {{ split.layout.l }};"
+                  ng-class="{
+                    'fullPanelIndex': panelSlectedIndex.fullPanel == $index,
+                    'displayPanel': panelSlectedIndex.fullPanel !== undefined && panelSlectedIndex.fullPanel!==$index
+                    }">
+                <div ng-if="$index != 3" video-pane="split" index="$index"></div>
+              <div ng-if="$index == 3">
+                <dl-map dl-map-data="dlMapData"></dl-map>
+              </div>
+            </div>
+        </div>
+
+        <div class="timeline-container" ng-class="{'open':displayTimeline}">
+            <video-timeline></video-timeline>
+        </div>
+    </div>
+</div>

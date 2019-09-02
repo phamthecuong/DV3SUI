@@ -1,0 +1,19 @@
+<div class="camera-presets">
+    <div class="item1">Camera Presets</div>
+    <div class="item2">
+      <div class="preset-not-touch camera-preset-items" >
+        <!--<div class="item" ng-repeat="item in camList1 track by $index">{{$index}}</div>-->
+        <div class="item" ng-click="applyPreset($index + 1)" ng-repeat="item in [1,2,3,4,5,6,7,8,9,10] track by $index">{{$index + 1}}</div>
+      </div>
+
+      <div class=" preset-touch camera-preset-items" ng-scrollable>
+        <div class="item" ng-click="applyPreset($index + 1)" ng-repeat="item in [1,2,3,4,5,6,7,8,9,10] track by $index">{{$index + 1}}</div>
+      </div>
+
+       <!-- <div style="height: 100%; width: 1px; background-color: #46484D"></div>-->
+        <!--<div class="camera-preset-options">
+            <div class="cpipe"><i class="fa fa-reply" aria-hidden="true"></i></div>
+            <div class="cpipe"><i class="icon icons8-settings"></i></div>
+        </div>-->
+    </div>
+</div>

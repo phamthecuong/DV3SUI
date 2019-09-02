@@ -1,0 +1,64 @@
+.camera-presets {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+.camera-presets .item1 {
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.camera-presets .item2 {
+    border-radius: 3px;
+    background-color: var(--shark-bg);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    height: 65px;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    font-size: 16px;
+}
+
+.camera-presets .item2 .camera-preset-items.preset-not-touch {
+  display: inline-flex;
+}
+
+.camera-presets .item2 .camera-preset-items.preset-touch {
+  display: none;
+}
+
+.camera-presets .item2 .camera-preset-items {
+    width: 150px;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.camera-presets .item2 .camera-preset-items .item {
+    height: 50%;
+    width: 20%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.camera-presets .item2 .camera-preset-items .item:hover,
+.camera-presets .item2 .camera-preset-items .item:active {
+  color: var(--blue);
+}
+
+.camera-presets .item2 .camera-preset-options {
+    width: 30px;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+

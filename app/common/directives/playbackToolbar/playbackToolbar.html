@@ -1,0 +1,133 @@
+<div class="flex flex-rows v-centered h-centered container-btn toolbar-replay">
+    <div class="no-touch flex flex-rows">
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='ToBegin'}"
+             ng-click="playBackAction('ToBegin');">
+            <i class="icon icons8-skip-to-start"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='StepBackward'}"
+             ng-click="playBackAction('StepBackward')">
+            <i class="icon icons8-skip-to-start"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='FastBackward'}"
+             ng-click="playBackAction('FastBackward')">
+            <i class="icon icons8-rewind"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Backward'}"
+             ng-click="playBackAction('Backward')">
+             <i class="icon icons8-rewind"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Pause' || playBackState==='Play'}"
+             ng-click="playBackAction()">
+            <i class="icon icons8-pause" ng-hide="playBackState==='Pause'"></i>
+            <i class="icon icons8-play" ng-show="playBackState==='Pause'"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Stop'}"
+             ng-click="playBackAction('Stop')">
+            <i class="icon icons8-stop"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Forward'}"
+             ng-click="playBackAction('Forward')">
+            <i class="icon icons8-fast-forward"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='FastForward'}"
+             ng-click="playBackAction('FastForward')">
+            <i class="icon icons8-fast-forward"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='StepForward'}"
+             ng-click="playBackAction('StepForward')">
+            <i class="icon icons8-end"></i>
+        </div>
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='ToEnd'}"
+             ng-click="playBackAction('ToEnd')">
+            <i class="icon icons8-end"></i>
+        </div>
+    </div>
+
+    <div class="touch">
+        <div class="ctrl-btn step-forward-btn"
+             ng-class="{'active':playBackState==='StepBackward'}"
+             ng-click="playBackAction('StepBackward')">
+          <i class="icon icons8-skip-to-start"></i>
+        </div>
+
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Backward'}"
+             ng-click="playBackAction('Backward')">
+             <i class="icon icons8-rewind"></i>
+        </div>
+
+        <div class="ctrl-btn speed" ng-show="viewName==='video-pane'">
+           <!-- <i class="fa fa fa-undo speed-icon-l"></i>
+            <span class="speed-time-l">-15</span>-->
+          <span><div style="background: url(./images/backward_15_blue.png)"
+                     ng-class="{'active': playBackState==='Backward15'}"
+                     ng-click="playBackAction('Backward15')"
+                     class="image-custom-icon forward-backward-image">
+                </div>
+          </span>
+        </div>
+
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Pause' || playBackState==='Play'}"
+             ng-click="playBackAction()">
+            <i class="icon icons8-pause" ng-hide="playBackState==='Pause'"></i>
+            <i class="icon icons8-play" ng-show="playBackState==='Pause'"></i>
+        </div>
+
+        <div class="ctrl-btn speed" ng-show="viewName==='video-pane'">
+          <!-- <i class="fa fa-repeat speed-icon-r"></i>
+           <span class="speed-time-r">+15</span>-->
+          <span><div style="background: url(./images/forward_15_blue.png)"
+                     ng-class="{'active': playBackState==='Forward15'}"
+                     ng-click="playBackAction('Forward15')"
+                     class="image-custom-icon forward-backward-image">
+                </div>
+          </span>
+        </div>
+
+        <div class="ctrl-btn"
+             ng-class="{'active':playBackState==='Forward'}"
+             ng-click="playBackAction('Forward')">
+            <i class="icon icons8-fast-forward"></i>
+        </div>
+
+        <div class="ctrl-btn step-forward-btn"
+             ng-class="{'active':playBackState==='StepForward'}"
+             ng-click="playBackAction('StepForward')">
+          <i class="icon icons8-end"></i>
+        </div>
+
+        <div class="ctrl-btn dlm-inactive" ng-show="viewName==='video-pane'"
+             ng-class="{'active':playBackState==='Lightening'}"
+             ng-click="playBackAction('Lightening')">
+            <i class="icon fa fa-sun-o"></i>
+        </div>
+         <div class="ctrl-btn" ng-show="viewName==='video-pane'"
+              ng-class="{'active':playBackState==='TimeSelect'}"
+              ng-click="playBackAction('TimeSelect')">
+            <i class="icon fa fa-clock-o"></i>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-rows v-centered h-centered container-btn toolbar-live">
+    <div class="ctrl-btn dlm-inactive">
+        <i class="fa fa-sun-o"></i>
+    </div>
+   <!-- <div class="ctrl-btn">
+      <div style="background: url(./images/focus_plus_48x48.png)" class="image-custom-icon"></div>
+    </div>-->
+    <div class="ctrl-btn">
+      <i class="fa fa-clock-o" style="font-size: 23px"></i>
+    </div>
+</div>

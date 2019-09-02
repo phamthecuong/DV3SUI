@@ -1,0 +1,270 @@
+@media (pointer: coarse) {
+
+ /*   #videoPaneTimeline .tl-header {
+        display: none;
+    }
+
+    #videoPaneTimeline .tl-grid {
+        flex: 0 1 74px;
+    }
+
+    #videoPaneTimeline .tl-controls {
+        flex: 0 1 96px;
+    }
+
+    #videoPaneTimeline .tl-controls .tl-control-btn {
+        display: flex;
+    }
+
+    #videoPanes .timeline-container.open {
+        flex: 0 1 170px;
+    }
+
+    .tl-controls .tl-control-general {
+        margin: 0px;
+    }
+
+    .tl-control-general .item2 {
+        margin-bottom: 24px;
+    }
+
+    .tl-control-cameras, .tl-control-time {
+        margin: 0 10px !important;
+        height: 100%;
+    }
+
+    .tl-control-modes {
+        display: none;
+    }
+
+    .camera-channels {
+        height: 96px;
+    }
+
+    .camera-channels .item2 > div:nth-child(2) {
+        display: none;
+    }
+
+    .camera-channels .item1 {
+        height: 22px;
+        margin: 0px;
+        font-size: 10px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
+
+    .camera-channels .item2 {
+        height: 48px;
+    }
+
+    .camera-channels .item2 .cameras-pipe {
+        height: 100%;
+    }
+
+    .tl-control-presets, .tl-control-wheel, .tl-control-volume, .tl-control-options {
+        display: none;
+    }
+
+    .date-and-time .item1, .playback-control .item1 {
+        height: 22px;
+        margin: 0px;
+    }
+
+    .date-and-time .item2 {
+        height: 48px;
+        padding: 0 20px;
+    }
+
+    .date-and-time .item2 .values {
+        font-size: 20px;
+    }
+
+    .date-and-time .item2 .labels {
+        font-size: 10px;
+    }
+
+    .tl-controls .scrollable-content {
+        min-width: 600px;
+    }
+
+    .playback-control .item2 {
+        height: 48px;
+    }
+
+    .playback-control .item2 > div:nth-child(2), .playback-control .item2 > div:nth-child(3), .playback-control .item2 > div:nth-child(7), .playback-control .item2 > div:nth-child(8) {
+        display: none;
+    }
+
+    .grid-item .icon-event-timeline {
+        transform-origin: center;
+        transform: scale(2);
+    }
+
+    .replay .tl-control-cameras {
+        display: none;
+    }
+
+    .timeline-container {
+        display: none;
+    }
+
+!* -------------------------------------------------------------------------------- *!
+
+    #videoPanes .timeline-container {
+        display: block;
+    }
+
+    .control-screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        z-index: -1;
+        opacity: 0;
+        transition: all linear 0.5s;
+    }
+
+    .video-pane-overlay-container:hover .control-screen {
+        z-index: 2;
+        opacity: 1;
+    }
+
+    .video-pane-overlay-container:hover .control-screen.hide-control-screen {
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .control-screen > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: transparent;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .control-screen > div:active {
+        color: white;
+    }
+
+    .control-screen > div:nth-child(1) > span:nth-child(2),
+    .control-screen > div:nth-child(3) > span:nth-child(2) {
+        font-size: 21px;
+        position: absolute;
+        top: 42%;
+    }
+
+    .control-screen > div:nth-child(1) > span:nth-child(2) {
+        left: 40%;
+    }
+
+    .control-screen > div:nth-child(3) > span:nth-child(2) {
+        left: 30%;
+    }
+
+    .control-screen > div:nth-child(2) >span,
+    .control-screen > div:nth-child(1) > span:nth-child(1),
+    .control-screen > div:nth-child(3) > span:nth-child(1) {
+        width: 1px;
+        height: 1px;
+        font-size: 70px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 50px 50px black;
+    }
+
+    .video-pane-overlay-container:hover .videoPane-toolbar-top.hide-top-toolbar {
+        top: -34px;
+        opacity: 0;
+    }
+
+    .video-pane-overlay-container:hover .videoPane-toolbar-bottom.hide-bottom-toolbar {
+        bottom: -40px;
+        opacity: 0;
+    }
+
+    .videoPane-toolbar-top {
+        height: 48px;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+
+    .videoPane-toolbar-top > div {
+        flex: 1;
+    }
+
+    .options-group-left .item {
+        width: 48px;
+    }
+
+    .options-group-left.response .dropdown-container-event {
+        left: 5px;
+        top: 48px;
+    }
+
+    .options-group-left .dropdown-container-event {
+        left: 0px;
+    }
+
+    .options-group-left .dropdown-container-event > li {
+        width: 48px;
+    }
+
+    .options-group-right .item {
+        width: 48px;
+    }
+
+    .options-group-right .list-camera,
+    .options-group-right .dropdown-channel {
+        display: none;
+    }
+
+    .options-group-right .channel-group .dropdown-btn {
+        border-radius: 5px;
+    }
+
+    .options-group-right .dropdown-channel.response {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        top: 48px;
+        font-size: 16px;
+    }
+
+    .videoPane-toolbar-bottom {
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .toolbar-replay .no-touch {
+        display: none;
+    }
+
+    .toolbar-replay .touch {
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toolbar-replay .touch .ctrl-btn {
+        width: 48px;
+        height: 48px;
+        margin: 0 5px;
+    }*/
+
+
+    /* ----------------------------------------------------------- */
+}
+
+@media (pointer: fine) {
+
+}

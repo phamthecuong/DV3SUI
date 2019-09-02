@@ -1,0 +1,24 @@
+<div class="camera-channels flex flex-cols h-started" ng-class="{'inactive': false}">
+    <div class="item1">{{"cameras" | translate}}</div>
+    <div class="item2 flex flex-cols">
+        <div class="cameras-pipe pcam flex flex-rows v-centered">
+            <div ng-class="{pactive : activeCameraIndex === $index}" ng-repeat="item in camList" class="pipe-item icam">{{$index + 1}}</div>
+        </div>
+        
+        <div class="control-pipe flex flex-rows v-centered">
+            <div class="cpipe cpipe-back" ng-click="back()"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+            <div class="tooltip-custom flex tooltip-back">
+                <div><span >{{"down" | translate}}</span></div>
+                <span class="tooltip-arrow"></span>
+            </div>
+            <div class="cpipe cpipe-next" ng-click="next()"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+            <div class="tooltip-custom flex tooltip-next">
+                <div><span>{{"up" | translate}}</span></div>
+                <span class="tooltip-arrow"></span>
+            </div>
+
+            <div class="cpipe"><i class="fa fa-reply" aria-hidden="true"></i></div>
+            <div class="cpipe"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+        </div>
+    </div>
+</div>

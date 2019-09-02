@@ -1,0 +1,50 @@
+<div id="dropdownCameraList" ng-class="{'open':showCameraListPopup}">
+    <div class="bg" ng-click="showCameraListPopup=false;"></div>
+    <div class="box">
+        <div class="" style="height: 100%; display: flex; flex-flow: column nowrap;">
+            <div class="" style="flex: 0 1 auto;">
+                <div class="flex rows v-centered" style="flex: 0 1 auto; width: 100%; padding: 0 4px;">
+                    <div class="" style="flex: 0 1 auto;">
+                        <button type="button" class="btn navbar-btn btn-dlm-tb" ng-click="activeView(1)" ng-class="{'active':activeViewIndex==1}"><i class="icons8-list"></i> {{"list" | translate}}</button>
+                    </div>
+                    <div class="" style="flex: 0 1 auto;">
+                        <button type="button" class="btn navbar-btn btn-dlm-tb" ng-click="activeView(2)" ng-class="{'active':activeViewIndex==2}"><i class="icons8-thumbnails"></i> {{"grid" | translate}}</button>
+                    </div>
+                    <div class="" style="flex: 1;"></div>
+                    <div class="" style="flex: 0 1 auto;">
+                        <button type="button" class="btn navbar-btn btn-dlm-tb" ng-click="activeView(3)" ng-class="{'active':activeViewIndex==3}"><i class="icons8-search"></i> {{"search" | translate}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tree-container col-xs-12 flex-1" ng-scrollable>
+                <div class="search-container" ng-if="isSearchView">
+                    <input class="form-control" ng-model="searchText.value" placeholder='{{"search_camera" | translate}}'>
+                </div>
+
+                <div ng-repeat="group in camGroups" class="cam-group flex flex-cols" ng-hide="isSearchView && (group.cams==null || group.cams.length==0)">
+                    <div class="header flex flex-row v-centered" ng-click="displayCamGroup($index);">
+                        <div class="icon"><i ng-class="{'icons8-folder':!group.open, 'icons8-open-folder':group.open}"></i></div>
+                        <div class="lbl">{{ ::group.label }}</div>
+                    </div>
+                    <div class="list" ng-show="group.open">
+                        <div ng-show="group.cams.length===0 || group.cams===null">
+                            <div>{{"list_empty" | translate}}</div>
+                        </div>
+                        <div ng-show="group.cams.length>0" class="list-content">
+                            <div ng-repeat="item in group.cams | filter:searchText.value"
+                                 camera-tree-item="item"
+                                 class="camera-tree-item flex flex-rows v-centered"
+                                 ng-class="{'list-item':isListView, 'grid-item':isGridView}"
+                                 draggable="true"
+                                 index="$index">
+                                <div class="spc"></div>
+                                <div class="icon"><i class="icons8-video-call"></i></div>
+                                <div class="lbl">{{ ::item.displayName }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

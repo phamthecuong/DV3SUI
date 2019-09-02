@@ -1,0 +1,32 @@
+<div class="camera-control-wheel flex v-centered h-centered">
+    <div class="circle-big">
+        <div class="arrow-container t" ng-click="cameraMove(0, 0.5, 0)"><div class="arrow"></div></div>
+        <div class="background t"></div>
+        
+        <div class="arrow-container tr" ng-click="cameraMove(0.5, 0.5, 0)"><div class="arrow"></div></div>
+        <div class="background tr"></div>
+        
+        <div class="arrow-container r" ng-click="cameraMove(0.5, 0, 0)"><div class="arrow"></div></div>
+        <div class="background r"></div>
+        
+        <div class="arrow-container br" ng-click="cameraMove(0.5, -0.5, 0)"><div class="arrow"></div></div>
+        <div class="background br"></div>
+        
+        <div class="arrow-container b" ng-click="cameraMove(0, -0.5, 0)"><div class="arrow"></div></div>
+        <div class="background b"></div>
+        
+        <div class="arrow-container bl" ng-click="cameraMove(-0.5, -0.5, 0)"><div class="arrow"></div></div>
+        <div class="background bl"></div>
+        
+        <div class="arrow-container l" ng-click="cameraMove(-0.5, 0, 0)"><div class="arrow"></div></div>
+        <div class="background l"></div>
+        
+        <div class="arrow-container tl"><div class="arrow" ng-click="cameraMove(-0.5, 0.5, 0)"></div></div>
+        <div class="background tl"></div>
+    </div>
+    
+    <div class="circle-small flex v-centered h-centered" ng-click="cameraMove(0, 0, 0)">
+        <div class="lock-ptz"><i class="fa fa-lock" aria-hidden="true"></i></div>
+    </div>
+</div>
+

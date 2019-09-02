@@ -1,0 +1,154 @@
+/*
+  Icon Font: dlm-asa-font-icons
+*/
+
+@font-face {
+  font-family: "dlm-asa-font-icons";
+  src: url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.eot");
+  src: url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.woff2") format("woff2"),
+       url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.woff") format("woff"),
+       url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.ttf") format("truetype"),
+       url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.svg#dlm-asa-font-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "dlm-asa-font-icons";
+    src: url("../fonts/dlm-asa-font-icons/dlm-asa-font-icons.svg#dlm-asa-font-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icons8-attach:before,
+.icons8-audio-file:before,
+.icons8-back:before,
+.icons8-bicycle:before,
+.icons8-camera:before,
+.icons8-car:before,
+.icons8-checkmark:before,
+.icons8-collapse-arrow:before,
+.icons8-contacts:before,
+.icons8-delete:before,
+.icons8-delete-2:before,
+.icons8-detective:before,
+.icons8-document:before,
+.icons8-edit:before,
+.icons8-error:before,
+.icons8-expand-arrow:before,
+.icons8-film:before,
+.icons8-final-state:before,
+.icons8-finish-flag:before,
+.icons8-forward:before,
+.icons8-helicopter:before,
+.icons8-help:before,
+.icons8-high-priority:before,
+.icons8-horse:before,
+.icons8-image-file:before,
+.icons8-import:before,
+.icons8-info:before,
+.icons8-inspection:before,
+.icons8-list:before,
+.icons8-low-priority:before,
+.icons8-map-marker:before,
+.icons8-marker:before,
+.icons8-mind-map:before,
+.icons8-minus:before,
+.icons8-motorcycle:before,
+.icons8-new-post:before,
+.icons8-online-support:before,
+.icons8-password:before,
+.icons8-pdf-2:before,
+.icons8-phone:before,
+.icons8-plus:before,
+.icons8-plus-math:before,
+.icons8-question-mark:before,
+.icons8-redo:before,
+.icons8-save:before,
+.icons8-search:before,
+.icons8-sedan:before,
+.icons8-settings-3:before,
+.icons8-show-property:before,
+.icons8-siren:before,
+.icons8-system-task:before,
+.icons8-thumbnails:before,
+.icons8-txt:before,
+.icons8-upload:before,
+.icons8-user-groups:before,
+.icons8-video-file:before,
+.icons8-wall-mount-camera:before {
+  display: inline-block;
+  font-family: "dlm-asa-font-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icons8-attach:before { content: "\f100"; }
+.icons8-audio-file:before { content: "\f101"; }
+.icons8-back:before { content: "\f102"; }
+.icons8-bicycle:before { content: "\f103"; }
+.icons8-camera:before { content: "\f104"; }
+.icons8-car:before { content: "\f105"; }
+.icons8-checkmark:before { content: "\f106"; }
+.icons8-collapse-arrow:before { content: "\f107"; }
+.icons8-contacts:before { content: "\f108"; }
+.icons8-delete:before { content: "\f109"; }
+.icons8-delete-2:before { content: "\f10a"; }
+.icons8-detective:before { content: "\f10b"; }
+.icons8-document:before { content: "\f10c"; }
+.icons8-edit:before { content: "\f10d"; }
+.icons8-error:before { content: "\f10e"; }
+.icons8-expand-arrow:before { content: "\f10f"; }
+.icons8-film:before { content: "\f110"; }
+.icons8-final-state:before { content: "\f111"; }
+.icons8-finish-flag:before { content: "\f112"; }
+.icons8-forward:before { content: "\f113"; }
+.icons8-helicopter:before { content: "\f114"; }
+.icons8-help:before { content: "\f115"; }
+.icons8-high-priority:before { content: "\f116"; }
+.icons8-horse:before { content: "\f117"; }
+.icons8-image-file:before { content: "\f118"; }
+.icons8-import:before { content: "\f119"; }
+.icons8-info:before { content: "\f11a"; }
+.icons8-inspection:before { content: "\f11b"; }
+.icons8-list:before { content: "\f11c"; }
+.icons8-low-priority:before { content: "\f11d"; }
+.icons8-map-marker:before { content: "\f11e"; }
+.icons8-marker:before { content: "\f11f"; }
+.icons8-mind-map:before { content: "\f120"; }
+.icons8-minus:before { content: "\f121"; }
+.icons8-motorcycle:before { content: "\f122"; }
+.icons8-new-post:before { content: "\f123"; }
+.icons8-online-support:before { content: "\f124"; }
+.icons8-password:before { content: "\f125"; }
+.icons8-pdf-2:before { content: "\f126"; }
+.icons8-phone:before { content: "\f127"; }
+.icons8-plus:before { content: "\f128"; }
+.icons8-plus-math:before { content: "\f129"; }
+.icons8-question-mark:before { content: "\f12a"; }
+.icons8-redo:before { content: "\f12b"; }
+.icons8-save:before { content: "\f12c"; }
+.icons8-search:before { content: "\f12d"; }
+.icons8-sedan:before { content: "\f12e"; }
+.icons8-settings-3:before { content: "\f12f"; }
+.icons8-show-property:before { content: "\f130"; }
+.icons8-siren:before { content: "\f131"; }
+.icons8-system-task:before { content: "\f132"; }
+.icons8-thumbnails:before { content: "\f133"; }
+.icons8-txt:before { content: "\f134"; }
+.icons8-upload:before { content: "\f135"; }
+.icons8-user-groups:before { content: "\f136"; }
+.icons8-video-file:before { content: "\f137"; }
+.icons8-wall-mount-camera:before { content: "\f138"; }

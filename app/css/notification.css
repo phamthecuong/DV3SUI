@@ -1,0 +1,156 @@
+/* toast notification */
+.toast-container {
+  position: absolute;
+  top: 40px;
+  z-index: 99; /* Safari */
+  transition: right .6s;
+  box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.5);
+  padding: 0;
+  max-height: 90%;
+  width: 400px;
+  /*overflow: auto;*/
+}
+.toast-container.out {
+  right: -410px;
+}
+.toast-container.in {
+  right: 40px;
+}
+.toast {
+  width: 400px;
+  min-height: 60px;
+  max-height: 150px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.25;
+  background-color: #65676f;
+  border-top: 2px solid #1cbbff;
+  display: table;
+  position: relative;
+}
+.toast .content {
+  padding: 9px 10px 11px;
+}
+.toast .content .title {
+  font-weight: bold;
+}
+.toast .content a {
+  color: white;
+  text-decoration: underline;
+}
+.toast > div {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+.toast .icon {
+  font-size: 20px;
+  width: 40px;
+}
+.toast .button {
+  border-left: 1px solid rgba(0, 0, 0, .25);
+  text-align: center;
+  line-height: normal;
+  width: 80px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.toast .button:hover {
+  background-color: rgba(43, 44, 48, .5);
+}
+.toast .button:active {
+  background-color: rgba(43, 44, 48, 1);
+  color: #1cbbff;
+}
+.toast .button i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.toast.warning {
+  border-top: 2px solid #ffca38;
+}
+.toast.success {
+  border-top: 2px solid #00cc10;
+}
+
+.toast-container > .mCustomScrollBox.mCSB_outside {
+  z-index: 99;
+}
+.toast-container > .mCSB_scrollTools_vertical {
+  z-index: 98;
+  right: -16px;
+  background-color: #46484d;
+  opacity: 0;
+  box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.5);
+}
+.toast-container > .mCSB_scrollTools_vertical:hover {
+  opacity: 1;
+}
+.toast span.head {
+  margin-right: 2px;
+}
+
+.toast .button-command-text {
+  margin: 2px 0px 0px;
+}
+
+.ui-notification.error {
+  background-color: #d91e04;
+}
+
+.ui-notification.info {
+  background-color: #1cbbff;
+}
+
+.ui-notification.warning {
+  background-color: #ffca38;
+}
+
+.ui-notification.system_status {
+  color: #000000;
+  height: 26px;
+  width: auto;
+  min-width: 350px;
+}
+
+.ui-notification.system_status .system-status-content{
+  display: inline-block;
+  text-align: center;
+  width: calc(100% - 43px);
+  height: 100%;
+}
+
+.system_status .system-status-close{
+  float: right;
+  margin: 0px 10px 0px 15px;
+  height: 100%;
+}
+
+.system-status-close i {
+  color: rgba(0,0,0,0.5);
+}
+
+.system-status-close i:hover {
+  color: rgba(0,0,0,0.7);
+}
+
+.system-status-close i:focus,
+.system-status-close i:active{
+  color: rgba(0,0,0,1);
+  outline: none;
+}
+
+.system_status .system-status-content i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+
+.system_status .system-status-content a {
+  text-decoration: underline;
+  color: #000000;
+  font-size: 12pt;
+  margin-left: 10px;
+  cursor: pointer;
+}

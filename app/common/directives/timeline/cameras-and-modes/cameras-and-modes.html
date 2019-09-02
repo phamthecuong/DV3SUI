@@ -1,0 +1,32 @@
+<div class="cameras-and-modes">
+    <div class="item1">{{"split" | translate}}</div>
+    <div class="item2">
+       <!-- <div class="btngroup cameras" ng-click="showSplits = !showSplits">
+            <div class="button" style="flex: 5;">{{"main_viewer_split" | translate}} {{ activePaneIndex + 1 }}</div>
+            <div class="button arrow" ng-class="{'active':showSplits}">
+                <i class="icon icons8-expand-arrow"></i>
+            </div>
+            <div class="dropdown-options-container split-options" ng-show="showSplits">
+                <ul>
+                    <li ng-repeat="split in splits"
+                        ng-class="{'active':activePaneIndex==$index}"
+                        ng-click="changePane($index);">
+                        {{"split" | translate}} {{ $index+1 }}
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+
+        <div class="btngroup modes">
+            <div class="button" ng-class="{'active':activePaneObj.mode=='live'}" ng-click="switchMode('live');">
+                <img class="camera-mode-item" src="images/live.png"/> {{"live" | translate}}
+            </div>
+           <!-- <div class="button" ng-class="{'active':activePaneObj.mode=='sync'}">
+              <i class="icon icons8-link camera-mode-item"></i> {{"inSync" | translate}} (2)
+            </div>-->
+            <div class="button" ng-class="{'active':activePaneObj.mode=='replay'}" ng-click="switchMode('replay');">
+                <i class="icon icons8-play camera-mode-item"></i> {{"replay" | translate}}
+            </div>
+        </div>
+    </div>
+</div>

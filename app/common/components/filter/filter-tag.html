@@ -1,0 +1,5 @@
+<div class="ui-select-container">
+    <div ng-repeat="type in $ctrl.eventTypes">
+        <span ng-click="$ctrl.select($index)" ng-class = "{'lactive': $ctrl.isSelected[$index]}" class="label label-default tag">{{type}}</span>
+    </div>
+</div>

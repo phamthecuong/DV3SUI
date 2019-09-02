@@ -1,0 +1,18 @@
+<div class="timeline">
+    <div class="dragger-wrapper">
+        <div class="dragger flex flex-cols v-centered h-centered">
+            <div class="time-output">{{ draggerTime | date:'HH:mm:ss' }}</div>
+            <div class="line-devider"></div>
+        </div>
+    </div>
+    <div class="time-navigation flex flex-rows v-centered">
+        <div class="btn-time-control btn-back" ng-click="clickMoveTimeLine('back')"><i class="icons8-back"></i></div>
+        <div class="back-event flex v-centered"></div>
+        <div></div>
+        <div class="forward-event flex v-centered"></div>
+        <div class="btn-time-control btn-forward" ng-click="clickMoveTimeLine('next')"><i class="icons8-forward"></i></div>
+    </div>
+    <div class="time-grid-container">
+        <div class="wrapper"></div>
+    </div>
+</div>

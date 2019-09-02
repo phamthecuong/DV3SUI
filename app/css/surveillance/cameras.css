@@ -1,0 +1,112 @@
+.camera-channels {
+    width: 120px;
+}
+
+.camera-channels .item1 {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.camera-channels .item2 {
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--shark-bg);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    height: 65px;
+}
+
+.camera-channels .item2 .cameras-pipe {
+    width: 100%;
+    height: 50%;
+    overflow: auto;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.camera-channels .item2 .cameras-pipe::-webkit-scrollbar { 
+    display: none; 
+}
+
+#videoPaneTimeline.live .cameras-pipe .pactive {
+    color: var(--green);
+}
+
+#videoPaneTimeline.replay .cameras-pipe .pactive {
+    color: var(--yellow);
+}
+
+.camera-channels .item2 .control-pipe {
+    justify-content: space-around;
+    height: 50%;
+}
+
+.camera-channels .item2 .control-pipe .tooltip-custom {
+    position: fixed;
+    opacity: 0;
+    min-width: 70px;
+    max-height: 200px;
+    color: white;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 3px;
+    padding: 3px 0 3px 0;
+    transition: opacity 0.5s;
+    border: 2px solid rgba(255, 255, 255, 0.33);
+    transform: translateY(calc(-50% - 20px));
+}
+
+.camera-channels .item2 .control-pipe .tooltip-custom > div {
+    margin: 0 auto;
+}
+
+.camera-channels .item2 .control-pipe .tooltip-back {
+    margin-left: -47px;
+}
+
+.camera-channels .item2 .control-pipe .tooltip-next {
+    margin-left: -17px;
+}
+
+.camera-channels .item2 .control-pipe .cpipe-back:hover + .tooltip-back {
+    opacity: 1; 
+}
+
+.camera-channels .item2 .control-pipe .cpipe-next:hover + .tooltip-next {
+    opacity: 1; 
+}
+
+.pipe-item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 16px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpipe{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    font-size: 16px;
+}
+
+.cpipe:disabled, .cpipe[disabled] {
+    opacity: 0.4;
+}
+
+#videoPaneTimeline.live .camera-channels .cpipe:hover {
+    color: var(--green);
+}
+
+#videoPaneTimeline.replay .camera-channels .cpipe:hover {
+    color: var(--yellow);
+}
+

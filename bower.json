@@ -1,0 +1,64 @@
+{
+  "name": "dallmeier2",
+  "private": true,
+  "dependencies": {
+    "jquery": "*",
+    "ng-scrollbars": "latest",
+    "angular": "^1.6.5",
+    "angular-bootstrap": "2.5.0",
+    "jquery.transit": "~0.9.12",
+    "jquery-ui": "~1.11.4",
+    "bootstrap": "^3.2.0",
+    "angular-css": "~1.0.7",
+    "underscore": "~1.8.3",
+    "flowplayer": "latest",
+    "videojs": "^5.17.0",
+    "dashjs": "^2.4.1",
+    "videojs-contrib-dash": "",
+    "ngScrollable": "ng-scrollable#^0.2.5",
+    "hls.js": "^0.7.9",
+    "angular-ui-router": "^1.0.5",
+    "angular-leaflet-directive": "^0.10.0",
+    "slick-carousel": "^1.7.0",
+    "swiper": "^3.4.2",
+    "ngstorage": "^0.3.11",
+    "angular-cookies": "^1.6.5",
+    "angular-base64": "^2.0.5",
+    "angular-filter": "^0.5.16",
+    "angular-loading-bar": "^0.9.0",
+    "leaflet-geosearch": "^1.1.0",
+    "leaflet.locatecontrol": "^0.60.0",
+    "webcam": "webcam-directive#^3.0.0",
+    "angular-ui-select": "^0.19.8",
+    "bootstrap-ui-datetime-picker": "^2.6.0",
+    "angular-sanitize": "^1.6.6",
+    "angular-touch": "^1.6.6",
+    "ng-redux": "^3.5.2",
+    "angular-translate": "^2.15.2",
+    "angular-translate-loader-static-files": "^2.15.2",
+    "angular-dynamic-locale": "^0.1.32",
+    "ng-dialog": "^1.4.0",
+    "angular-moment-picker": "moment-picker#^0.10.1",
+    "ng-material-floating-button": "ng-mfb#^0.6.2",
+    "angular-resource": "^1.7.0",
+    "angular-i18n": "1.6.10",
+    "leaflet": "latest",
+    "leaflet.markercluster": "latest",
+    "angular-ui-notification": "0.3.6"
+  },
+  "overrides": {
+    "angular-resource": {
+      "main": [
+        "angular-resource.min.js"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.min.css"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "^1.6.5"
+  }
+}

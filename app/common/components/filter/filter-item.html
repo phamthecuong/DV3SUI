@@ -1,0 +1,6 @@
+<div ng-click="$ctrl.togglePane($event)" class="list-group-title">
+    <span class="glyphicon" ng-class="$ctrl.showPane ?  'glyphicon-chevron-down' : 'glyphicon-chevron-right'"></span> {{$ctrl.filter.label}}
+</div>
+<ul class="list-group tpane" id="tpane{{$ctrl.filter.tpaneId}}">
+    <div ng-transclude style="padding: 10px 0px;"></div>
+</ul>

@@ -1,0 +1,17 @@
+
+<div class="date-and-time flex flex-cols">
+    <div class="item1"></div>
+    <div class="item2" ng-dblclick="editDateAndTime()">
+        <div class="values">
+            <div>{{ time | date: 'dd' }} {{ time | date: 'MMM' }}  </div>
+            <div>{{ time | date: 'HH' }}:{{ time | date: 'mm'}}:{{ time | date: 'ss'}}  <span style="font-size: 15px">.01</span></div>
+        </div>
+        <div class="labels">
+            <div style="flex: 2;" class="item">{{"day" | translate | uppercase}}</div>
+            <div style="flex: 1;" class="item">{{"hr" | translate}}</div>
+            <div style="flex: 1;" class="item">{{"min" | translate}}</div>
+            <div style="flex: 1;" class="item">{{"sec" | translate}}</div>
+            <div style="flex: 1;" class="item">{{"fr" | translate}}</div>
+        </div>
+    </div>
+</div>

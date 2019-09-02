@@ -1,0 +1,67 @@
+<div class="setting flex flex-rows v-centered">
+    <div class="setting-left">
+        <div class="item-setting" ng-class="{'item-active':activeIndex===0}" ng-click="activeTab(0)"> 
+            <i class="fa fa-compass fa-1g" aria-hidden="true"></i>
+            <span>  PTZ setting</span></div>
+        <div class="item-setting" ng-class="{'item-active':activeIndex===1}" ng-click="activeTab(1)">
+            <i class="fa fa-camera-retro fa-1g"></i>
+            <span>  Camera setting</span></div>
+        <div class="item-setting" ng-class="{'item-active':activeIndex===2}" ng-click="activeTab(2)">
+            <i class="fa fa-clock-o fa-1g" aria-hidden="true"></i>
+            <span>  Timeline setting</span>
+        </div>
+        <div class="item-setting" ng-class="{'item-active':activeIndex===3}" ng-click="activeTab(3)">
+            <i class="fa fa-server" aria-hidden="true"></i>
+            <span>  Server setting</span>
+        </div>
+
+    </div>
+    <div class="setting-right">
+        <div class="right-container">
+            <div ng-if="!changeServer" class="setting-header flex flex-rows v-centered">
+                <span>{{"Command" | translate}}</span>
+                <span>{{"Shortcut" | translate}}</span>
+            </div>
+            <div ng-if="!changeServer" class="setting-body" ng-scrollable="{scrollX:'none'}">
+                <div ng-repeat="(idx, data) in dataSetting" ng-show="idx === activeIndex">
+                    <div class="row-container flex flex-rows v-centered" 
+                        ng-repeat="(index, item) in data" 
+                        ng-click="selectSetting(idx, index)" 
+                        ng-class="{'last-item': $last, 'first-item': $first}">
+                        
+                        <span class="row-setting" ng-class="{'row-cmd':item.setting}">{{item.command}}</span>
+                        <span class="row-setting" ng-hide="item.setting">
+                            <input class="form-control" 
+                                    type="text" 
+                                    name="country" 
+                                    ng-value="item.shorcut" 
+                                    ng-model="shorcut[idx][index]" 
+                                    readonly>
+                        </span> 
+                        <span class="row-setting" ng-show="item.setting">
+                            <input class="input-val form-control"
+                                    type="text"
+                                    name="shorcut-{{index}}"
+                                    ng-click="focusInput($event, idx, index)" 
+                                    ng-keyup="keyPressSetting($event, idx, index)" 
+                                    ng-value="item.shorcut"
+                                    ng-model="shorcut[idx][index]" 
+                                    readonly>
+                        </span>
+                        <span ng-show="hintPress[idx][index]" class="row-title">Press key in keyboard</span>
+                    </div>
+                </div>
+            </div>    
+
+            <div class="server-setting" ng-if="changeServer">
+                <div class="input-server">
+                    <span>URL:</span>
+                    <input type="text" value="{{serverUrl}}" name="url-name" ng-model="serverUrl">
+                </div>
+                <div class="connect-server">
+                    <span ng-click="connectServer(serverUrl)"><i class="fa fa-plug" aria-hidden="true"></i> Connect</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

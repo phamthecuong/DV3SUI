@@ -1,0 +1,102 @@
+<div class="custom-dialog dialog-setting" ng-click="hideSetting($event)">
+    <div class="dialog-header">
+        <div>
+            <span><i class="fa fa-wrench"></i></span>
+            <span>{{"Setting" | translate}}</span>
+        </div>
+    </div>
+    <div class="dialog-content">
+        <div>
+            <div class="flex tab-header">
+                <div class="label-tab">
+
+                    <button class="btn navbar-btn btn-dlm-tb" ng-click="activeView(0)" ng-class="{'active':tabIndex==0}"><i class="icons8-list"></i> {{"PTZ" | translate}} </button>
+                </div>
+
+                <div class="label-tab">
+                    <button class="btn navbar-btn btn-dlm-tb" ng-click="activeView(1)" ng-class="{'active':tabIndex==1}"><i class="icons8-thumbnails"></i> {{"Camera" | translate}}
+                    </button>
+                </div>
+
+            </div>
+            <div class="tab-body">
+                <div class="tab-content first-tab" ng-show="tabIndex==0">
+                    <div class="t-header fl">
+                        <span>{{"Command" | translate}}</span>
+                        <span>{{"Shortcut" | translate}}</span>
+                    </div>
+                    <div class="t-body" ng-scrollable="{scrollX:'none',scrollY:'right', preventWheelEvents:'true', preventKeyEvents:'true' }">
+                        <div class="row fl" 
+                            ng-repeat="(index, item) in dataSetting[tabIndex]" 
+                            ng-click="selectSetting(index)" 
+                            ng-class="{'last-item': $last}">
+                            <span class="row-setting" ng-class="{'row-cmd':item.setting}">{{item.command}}</span>
+                            <span class="row-setting row-input" ng-hide="item.setting">
+                                <input class="row-setting form-control" type="text" 
+                                name="country" 
+                                ng-value="item.shorcut" 
+                                ng-model="shorcut[tabIndex][index]" readonly>
+                            </span> 
+                            <span class="row-setting row-input" ng-show="item.setting">
+                                <input class="row-setting input-val form-control" type="text"
+                                name="shorcut-{{index}}"
+                                ng-click="focusInput($event,index)" 
+                                ng-keyup="changeInputSetting($event,index)" 
+                                ng-model="shorcut[tabIndex][index]" 
+                                readonly>
+                            </span>
+                            <span ng-show="hintPress[tabIndex][index]" class="row-title">Press key in keyboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content first-tab" ng-show="tabIndex==1">
+                    <div class="t-header fl">
+                        <span>{{"Command" | translate}}</span>
+                        <span>{{"Shortcut" | translate}}</span>
+                    </div>
+                    <div class="t-body" ng-scrollable="{scrollX:'none',scrollY:'right', preventWheelEvents:'true'}">
+                        <div class="row fl" 
+                            ng-repeat="(index, item) in dataSetting[tabIndex]" 
+                            ng-click="selectSetting(index)" 
+                            ng-class="{'last-item': $last}">
+                            <span class="row-setting" ng-class="{'row-cmd':item.setting}">{{item.command}}</span>
+                            <span class="row-setting row-input" ng-hide="item.setting">
+                                <input class="row-setting input-default form-control" 
+                                type="text" readonly
+                                name="country" 
+                                ng-value="item.shorcut"
+                                ng-model="shorcut[tabIndex][index]">
+                            </span> 
+                            <span class="row-setting row-input" ng-show="item.setting">
+                                <input class="row-setting input-val form-control" type="text"
+                                name="shorcut-{{index}}" readonly
+                                ng-click="focusInput($event,index)" 
+                                ng-keyup="changeInputSetting(index)" 
+                                ng-model="shorcut[tabIndex][index]">
+                            </span>
+                            <span ng-show="hintPress[tabIndex][index]" class="row-title">Press key in keyboard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="group-left">
+            <button class="btn btn-dlm-tb" ng-click="settingDefault()">
+                <span><i class="fa fa-power-off"></i></span>
+                <span>{{"Default" | translate}}</span>
+            </button>    
+        </div>
+        <div class="group-right">
+            <button class="btn btn-dlm-tb" ng-click="saveSetting()">
+                <span class="glyphicon glyphicon glyphicon-ok"></span>
+                <span>{{"Change" | translate}}</span>
+            </button>
+            <button class="btn btn-dlm-tb" ng-click="closeThisDialog()">
+                <span>{{"Cancel" | translate}}</span>
+            </button>
+        </div>
+    </div>
+</div>

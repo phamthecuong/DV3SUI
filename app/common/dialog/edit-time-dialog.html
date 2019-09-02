@@ -1,0 +1,23 @@
+
+<div class="custom-dialog">
+    <div class="dialog-header">
+        <div class="item1">
+            <span class="icon icons8-property-time"></span>{{"select_time" | translate}}
+        </div>
+    </div>
+    <div class="dialog-content">
+        <input autofocus ng-hide="true">
+        <input class="form-control time-picker" ng-model="timePicker" ng-model-options="{ updateOn: 'blur' }" placeholder="{{'select_a_time' | translate}}" moment-picker="timePicker" min-view="year" format="YYYY-MM-DD HH:mm:ss"> 
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-dlm-tb" type="button" style="margin-right: 10px;" ng-click="selectTime()"><span class="glyphicon glyphicon glyphicon-ok" style="margin-right: 5px;"></span>{{"insert" | translate}}</button>
+        <button class="btn btn-dlm-tb" type="button" ng-click="closeThisDialog()"><span class="far fa-hand-paper" aria-hidden="true" style="margin-right: 5px;"></span>{{"cancel" | translate}}</button>
+    </div>
+</div>
+
+<style>
+    .moment-picker td:hover,.moment-picker th:hover{
+        background:#0080ff;
+        background-image:-webkit-linear-gradient(#0080ff,#0080ff);
+    }
+</style>

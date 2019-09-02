@@ -1,0 +1,122 @@
+<div class="video-pane"
+     ng-click="focusPane($event);"
+     ng-class="{
+               'live':pane.mode=='live',
+               'replay':pane.mode=='replay',
+               'sync':pane.mode=='sync'
+               }">
+
+    <div ng-if="videoMounted" class="video-pane-overlay-container" auto-hide-toolbar id="control-keyboard" ng-init="initFn()">
+        <div id="videoPane_toolbar_top" class="flex v-centered videoPane-toolbar-top">
+            <div class="options-group-right flex v-centered">
+               <!-- <div class="item" ng-click="disconnectVideoPane();">
+                    <i class="icon icons8-disconnected"></i>
+                </div>-->
+                <div class="item" ng-click="fullScreenPanel(index)" ng-if="activeSplitIndex>=0">
+                    <i class="glyphicon" ng-class="notFullScreen ? 'glyphicon-resize-full':'glyphicon-resize-small'"></i>
+                </div>
+                <div class="item displayTimeline" ng-click="displayTimeline() ">
+                    <i class="icon icons8-settings"></i>&nbsp;
+                    <i class="icon icons8-expand-arrow expand-arrow"></i>
+                </div>
+                <div class="channel-group flex flex-rows v-centered">
+                    <div class="navbar-btn btn-dlm-tb list-camera" ng-class="{'active':pane.pos==$index}" ng-repeat="item in camList1 track by $index" ng-click="selectCameraFromControl($index, 1);">{{item.displayName}}</div>
+                    <div class="navbar-btn btn-dlm-tb flex flex-rows v-centered h-centered dropdown-btn" ng-click="showDropdown = !showDropdown">
+                        <i class="icon icons8-video-call"></i>&nbsp;
+                        <i class="icon icons8-expand-arrow expand-arrow" ></i>
+                        <ul class="dropdown-channel" ng-show="showDropdown && camList2.length > 0">
+                          <li ng-repeat="item in camList2 track by $index" ng-click="selectCameraFromControl($index, 2);" class="navbar-btn btn-dlm-tb flex v-centered" ng-class="{'active':pane.pos==$index + camList1.length}"><div title="{{item.displayName}}">{{item.displayName}}</div></li>
+                        </ul>
+                        <ul class="dropdown-channel response" ng-show="showDropdown && camList.length > 0">
+                            <li ng-repeat="item in camList track by $index" ng-click="selectCameraFromControl($index, 0);" class="navbar-btn btn-dlm-tb flex v-centered" ng-class="{'active':pane.pos==$index}">{{item.displayName}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mode-group flex flex-rows v-centered h-centered">
+                <div class="navbar-btn btn-dlm-tb" ng-class="{'active':pane.mode=='live'}" style="border-bottom-left-radius: 5px; border-top-left-radius: 5px;" ng-click="switchMode($event, 'live')">{{"live" | translate}}</div>
+                <div class="navbar-btn btn-dlm-tb" ng-class="{'active':pane.mode=='replay'}" style="border-bottom-right-radius: 5px; border-top-right-radius: 5px;" ng-click="switchMode($event, 'replay')">{{"replay" | translate}}</div>
+            </div>
+            <div class="options-group-left flex v-centered">
+                <div class="item display-icon camera-action-btn">
+                  <i class="icon icons8-data-backup-filled" ng-click="createEvent('event_image')" ></i>
+                </div>
+                <div class="item display-icon">
+                    <i class="fa fa-ellipsis-h" ng-click="displayMoreFunction();" ng-class="{'active': showMoreFunction}"></i>
+                    <ul class="dropdown-container-event" ng-show="showMoreFunction">
+                      <li class="camera-action-btn" ng-click="createEvent('event_video')"><i class="icon icons8-data-backup-filled"></i></li>
+                      <li ng-click="createEvent('event_image')"><i class="icon icons8-camera"></i></li>
+                      <li ng-click="createEvent('event_comment')"><i class="icon icons8-bookmark-ribbon-filled"></i></li>
+                      <!--<li ng-click="createEvent('event_call')"><i class="fa fa-phone"></i></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div ng-show="pane.mode=='replay'" class="control-screen">
+                <div>
+                   <span class="shadow-touch">
+                   </span>
+                  <div style="background: url(./images/backward_15_blue.png)"
+                       class="image-custom-icon">
+                  </div>
+                </div>
+                <div ng-click="screenControlAction()">
+                    <span ng-hide="playBackState == 'Pause'"><i class="fa fa-pause"></i></span>
+                    <span ng-show="playBackState == 'Pause'"><i class="fa fa-play"></i></span>
+                </div>
+                <div>
+                  <span class="shadow-touch">
+                   </span>
+                  <div style="background: url(./images/forward_15_blue.png)"
+                       class="image-custom-icon">
+                  </div>
+                </div>
+            </div>
+            <div class="abs flex v-centered h-centered" style="z-index: 1;">
+                <div ng-if="showVideoJanusWebRtc" class="janus-webrtc">
+                    <video id="{{ videoId }}" class="centered hide" autoplay width="100%" height="100%"></video>
+                    <div class="no-video-container" ng-if="noVideoAvailable">
+                        <i class="fa fa-video-camera fa-5 no-video-icon"></i>
+                        <span class="no-video-text">{{"no_remote_video_available" | translate}}</span>
+                    </div>
+                </div>
+                <div ng-if="showVideoEvoWs" class="evo-websocket">
+                    <video id="video{{ index }}" ng-click="playStreamEvoWs(index, false)"></video>
+                </div>
+<!--
+                <div class="abs flex v-centered h-centered" style="pointer-events: none;">
+                    <div ng-if=showVideoJanusWebRtc id="{{ videoId }}" class="janus-webrtc"></div>
+                </div>
+-->
+                <div class="loader" ng-if="showVideoJanusWebRtc"></div>
+            </div>
+            <div class="ptz-control-container" ng-if="pane.mode=='live' && pane.ptz" ptz-control>{{"ptz_control" | translate}}</div>
+        </div>
+        <div id="videoPane_toolbar_bottom" class="flex flex-rows v-centered h-centered videoPane-toolbar-bottom">
+            <div class="media-btn-group" ng-scrollable>
+                <playback-toolbar view-name="video-pane"></playback-toolbar>
+            </div>
+        </div>
+    </div>
+
+    <div class="mount-container flex v-centered h-centered" ng-class="{'hovered':dropHovered}" ng-hide="videoMounted">
+        <span class="icon icons8-plus"></span>
+    </div>
+
+    <div class="mode-footer flex flex-rows v-centered">
+        <div class="icon" ng-switch="pane.mode">
+            <i ng-switch-when="sync" class="icons8-link" ></i>
+            <i ng-switch-when="replay" class="icons8-play" ></i>
+            <img ng-switch-when="live" ng-src="images/live.png"/>
+        </div>
+        <div class="camera-name">
+            <span ng-if="pane.mode=='live'">{{"live" | translate}} - </span>
+            <span ng-if="pane.mode=='replay'">{{ markerTime | date:'HH:mm:ss' }} - </span>
+            <span ng-if="pane.mode">{{ pane.displayName }} </span>
+            <span ng-if="!pane.mode">{{"not_connected" | translate}}</span>
+        </div>
+    </div>
+
+    <div class="mode-indicator" ng-class="{'pane-selected':paneSelected}"></div>
+</div>

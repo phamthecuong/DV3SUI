@@ -1,0 +1,19 @@
+<div class="adjusted flex flex-cols dlm-inactive">
+    <div class="incre" on-click-and-hold= "$ctrl.increment()" ng-switch="$ctrl.iconType">
+      <i ng-switch-when="font" class="{{$ctrl.iconIncre}}" aria-hidden="true"></i>
+      <!--<img ng-switch-when="image" ng-src="images/{{$ctrl.iconIncre}}" aria-hidden="true"/>-->
+      <div ng-switch-when="image" ng-style="{background: 'url(./images/' +$ctrl.iconIncre }" class="image-custom-icon"></div>
+    </div>
+    <div class="flex v-centered h-centered">
+        <div class="khay flex flex-cols v-centered">
+            <div class="current flex flex-cols v-centered" style="height: {{$ctrl.value}}%">
+                <div class="point" style="transform: translateY($ctrl.value)"></div>
+            </div>
+        </div>
+    </div>
+    <div class="dec" on-click-and-hold="$ctrl.decrement()" ng-switch="$ctrl.iconType">
+      <i ng-switch-when="font" class="{{$ctrl.iconDec}}" aria-hidden="true"></i>
+      <!--<img ng-switch-when="image" ng-src="images/{{$ctrl.iconDec}}" aria-hidden="true"/>-->
+      <div ng-switch-when="image" ng-style="{background: 'url(./images/' +$ctrl.iconDec }" class="image-custom-icon"></div>
+    </div>
+</div>

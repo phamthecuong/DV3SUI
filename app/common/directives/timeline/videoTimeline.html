@@ -1,0 +1,146 @@
+<div id="videoPaneTimeline" class="flex flex-cols" ng-class="{'live':activePaneMode=='live', 'replay':activePaneMode=='replay'}" >
+
+    <div class="flex tl-header " ng-show="activePaneMode !== null" ng-scrollable="{scrollY:'none'}">
+        <div class="tl-header-left flex v-centered">
+            <div class="item1 flex v-centered h-centered">{{"insert" | translate}}</div>
+
+            <div class="item2" ng-click="createEvent('event_comment')" title="Bookmark">
+                <i class="icon icons8-bookmark-ribbon-filled"></i>
+            </div>
+<!--
+            <div class="item3" ng-click="createEvent('event_call')">
+                <i class="fa fa-phone"></i>
+            </div>-->
+
+            <div class="item3" ng-click="createEvent('event_image')" title="Take a snapshot">
+                <i class="icon icons8-camera"></i>
+            </div>
+
+            <!--<div class="item5" ng-click="createEvent('event_video')">
+                <i class="fa fa-film"></i>
+            </div>-->
+
+            <div class="item4" ng-click="createEvent('event_video')" title="Export">
+              <i class="icon icons8-data-backup-filled"></i>
+            </div>
+
+            <!--<div class="item6">
+                <i class="fa fa-binoculars"></i>
+            </div>-->
+
+        </div>
+        <div class="tl-header-right flex v-centered">
+            <div class="item1" ng-click="displayTimeline()">
+                <i class="icon icons8-settings"></i>
+                <i class="icon icons8-expand-arrow"></i>
+            </div>
+
+            <div class="item2 flex v-centered h-centered">
+                <div>{{"events" | translate}}</div>
+                <div class="btn navbar-btn btn-dlm-tb active-custom">{{"all" | translate}}</div>
+                <div class="btn navbar-btn btn-dlm-tb">{{"selected_track" | translate}}</div>
+            </div>
+
+            <div class="item3 flex v-centered h-centered" ng-click="showTimerangeOptions=!showTimerangeOptions">
+                <div class="btngroup flex" ng-class="{'selected':showTimerangeOptions}">
+                    <div class="button">
+                        {{ selectedTimerange.label }}
+                      <i class="icon icons8-collapse-arrow"></i>
+                      <i class="icon icons8-expand-arrow"></i>
+                    </div>
+                 <!--   <div class="flex-auto button dd" ng-class="{'active':showTimerangeOptions}">
+                        <i class="icons8-expand-arrow"></i>
+                    </div>-->
+                    <div class="dropdown-options-container timeline-range-options upper" ng-show="showTimerangeOptions">
+                        <ul>
+                            <li ng-repeat="option in timerangeOptions track by $index" ng-class="{'active':option.selected}" ng-click="updateTimelineRange($index);">
+                                {{ ::option.label }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item4 flex v-centered h-centered">{{"timeline" | translate}}</div>
+        </div>
+    </div>
+
+    <div class="tl-grid" ng-show="activePaneMode !== null">
+        <timeline></timeline>
+    </div>
+
+    <div class="tl-controls" ng-show="activePaneMode !== null" ng-scrollable="{scrollY:'none'}">
+        <div class="tl-control-general tl-control-modes camera-mode-container">
+            <tl-cameras-and-modes></tl-cameras-and-modes>
+        </div>
+
+        <!--<div class="tl-control-general tl-control-cameras">
+            <tl-cameras></tl-cameras>
+        </div>-->
+        <div class="gap-container">
+
+          <div ng-show="activePaneMode=='live'" class="tl-control-general tl-control-presets">
+            <tl-camera-presets></tl-camera-presets>
+          </div>
+
+          <div class="tl-control-general tl-control-wheel" ng-show="activePaneMode=='live'">
+            <tl-camera-control-wheel></tl-camera-control-wheel>
+          </div>
+
+          <div ng-show="activePaneMode=='live'" class="tl-control-general tl-control-volume">
+            <adjustment icon-incre="fa fa-plus" icon-dec="fa fa-minus" value="20" change="changeVolume($event)" icon-type="font"></adjustment>
+            <adjustment style="margin: 0 5px;"icon-incre="iris_in_32x32.png" icon-dec="iris_out_32x32.png" value="20" change="changeVolume($event)" icon-type="image"></adjustment>
+            <adjustment icon-incre="focus_in_32x32.png" icon-dec="focus_out_32x32.png" value="20" change="changeVolume($event)" icon-type="image"></adjustment>
+          </div>
+
+          <div ng-show="activePaneMode!='live'" class="tl-control-general playback-control flex flex-cols">
+            <div class="item1"></div>
+            <div class="item2">
+              <playback-toolbar view-name="time-line"></playback-toolbar>
+            </div>
+          </div>
+
+          <div class="tl-control-general tl-control-time">
+            <tl-date-and-time></tl-date-and-time>
+          </div>
+
+          <div class="tl-control-btn" ng-show="activePaneMode==='live'">
+            <div class="tl-control-ptz flex v-centered h-centered">{{"ptz" | translate}}</div>
+            <div class="tl-control-ptz flex v-centered h-centered"><div style="background: url(./images/iris_in_32x32.png)" class="control-ptz-item"></div></div>
+            <div class="tl-control-ptz flex v-centered h-centered"><div style="background: url(./images/focus_in_32x32.png)" class="control-ptz-item"></div></div>
+          </div>
+
+        </div>
+
+        <!--<div class="tl-control-general tl-control-options">
+            <tl-view-options></tl-view-options>
+        </div>-->
+
+
+    </div>
+
+    <div class="tl-no-selection flex h-centered flex-1" ng-show="activePaneMode === null">{{"no_pane_selected" | translate}}</div>
+</div>
+
+<div class="timeline-detail flex flex-cols">
+    <div class="timeline-detail-content">
+        <span class="glyphicon glyphicon-pencil edit-timeline-detail"  ng-click="editTimeLineDetail();"></span>
+        <div class="info-detail" ng-show="!isEdit">
+            <div class="title-detail">{{titleDetail}}</div>
+            <div class="content-detail">{{contentDetail}}</div>
+        </div>
+        <div class="info-detail-edit" ng-show="isEdit">
+            <input class="title-detail-edit form-control" ng-model="titleDetail">
+            <textarea class="form-control content-detail-edit" ng-model="contentDetail"></textarea>
+        </div>
+    </div>
+    <div class="timeline-detail-buttons flex flex-rows v-centered h-centered">
+        <div class="action-btn flex-1 flex v-centered h-centered"><span class="icon icons8-star"></span></div>
+        <div class="action-btn flex-1 flex v-centered h-centered"><span class="icon icons8-globe"></span></div>
+        <div class="action-btn item3 flex-1 flex flex-rows v-centered">
+            <div class="perform-export flex v-centered h-centered">
+                <span class="icon icons8-data-backup-filled"></span>
+            </div>
+        </div>
+    </div>
+</div>

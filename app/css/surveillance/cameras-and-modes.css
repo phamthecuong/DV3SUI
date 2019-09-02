@@ -1,0 +1,57 @@
+.cameras-and-modes {
+    position: relative;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.cameras-and-modes .item1 {
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.cameras-and-modes .item2 {
+    position: relative;
+    height: 65px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.cameras-and-modes .item2 .cameras {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-style: none;
+}
+
+.cameras-and-modes .item2 .cameras > div:nth-child(1), .cameras-and-modes .item2 .cameras > div:nth-child(2) {
+    cursor: pointer;
+}
+
+.cameras-and-modes .item2 .cameras .arrow {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.cameras-and-modes .item2 .modes {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    border-style: none;
+    cursor: pointer;
+}
+
+.cameras-and-modes .item2 .modes > div {
+    flex: 1;
+    display: flex;
+}
+
+.camera-mode-item {
+  margin: auto 5px auto auto;
+}

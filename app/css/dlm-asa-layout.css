@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+}
+.outer-container{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.table-100{
+	display:table;
+	height:100%;
+	width:100%;
+}
+.table-row{
+	display:table-row;
+}
+.table-cell{
+	display:table-cell;
+}
+.h100{
+	height: 100%;
+}
+.scrollable-wrapper{
+  position: relative;
+  height: calc(100% - 90px);
+}

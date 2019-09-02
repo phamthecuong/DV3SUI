@@ -1,0 +1,187 @@
+.setting {
+    background: var(--panther-bg);
+    font-size: 15px;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.setting-left {
+    flex: 1;
+    height: 100%;
+    padding-top: 80px;
+}
+
+.setting-left .item-setting {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.setting-left .item-setting > i{
+    width: 50px;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.setting-left .item-setting:hover {
+    cursor: pointer;
+    color: var(--blue);
+    background: var(--shark-bg);
+}
+
+.setting-left .item-active {
+    color: var(--blue);
+    background: var(--shark-bg);
+}
+
+.setting-right {
+    flex: 3;
+    height: 100%;
+    padding: 5% 150px;
+}
+
+.setting-right .right-container {
+    width: 100%;
+    height: 100%;
+    min-height: 242px;
+    overflow: hidden;
+    background: var(--shark-bg);
+    box-shadow: 5px 10px 8px var(--koala);
+    border-radius: 10px;
+}
+
+.setting-right .setting-header {
+    border-bottom: 1px solid;
+    font-size: 17px;
+    width: 100%;
+    align-items: center;
+    height: 42px;
+    padding: 0 20px;
+}
+
+.setting-right .setting-header > span {
+    flex: 1;
+    padding-left: 30px;
+}
+
+.setting-right .setting-body {
+    width: 100%;
+    height: calc(100% - 42px);
+    min-height: 200px;
+    padding: 30px 20px;
+}
+
+.setting-body .scrollable {
+    background: var(--shark-bg);
+}
+
+.setting-body .row-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.setting-body .row-container > span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.setting-body .row-container > span:first-child {
+    padding-left: 5px;
+}
+
+.setting-body .row-container > span:first-child:hover {
+    background: #65675B;
+    cursor: pointer;
+}
+
+.setting-body .row-cmd {
+    background-color: #65675B;
+    border: 1px solid white;
+}
+
+.setting-body .row-setting > input {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.setting-body .input-val {
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.setting-body .row-title {
+    width: 250px !important;
+    position: absolute;
+    background: cadetblue;
+    top: 37px;
+    right: 7%;
+    z-index: 1;
+    padding-left: 10px;
+}
+
+.setting .setting-body .last-item .row-title:last-child {
+    top: -36px;
+}
+
+.setting .setting-body .first-item .row-title:last-child {
+    top: 36px;
+}
+
+
+.setting .server-setting {
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    align-items: center;
+}
+
+.input-server {
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -40%;
+}
+
+.input-server >input {
+    background: var(--greyhound-bg); 
+    color: white; 
+    border: none;
+    padding: 7px;
+    width: 70%;
+    border-radius: 7px;
+}
+
+.input-server > span {
+    padding-right: 7px;
+}
+
+.connect-server {
+    flex-grow: 1; 
+    padding-left: 18px;
+    margin-top: -40%;
+}
+
+.connect-server >span {
+    padding: 7px;
+    background: #65676f;
+    border-radius: 7px;
+}
+
+.connect-server >span:hover {
+    cursor: pointer;
+    color: var(--blue);
+    background: var(--shark-bg);
+}

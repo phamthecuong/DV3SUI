@@ -1,0 +1,56 @@
+<div class="header-tabs-buttons">
+    <nav class="navbar navbar-local flex flex-rows v-centered hidden-xs hidden-sm">
+           <!-- <div class="navbar-btn-div hidden-xs hidden-sm">
+                <button class="btn navbar-btn btn-dlm-tb" ng-class="{'active':showSurveillanceSearch}"
+                        ng-click="displaySurveillanceSearch()">
+                    <i class="icon icons8-search"></i>{{"search" | translate}}
+                </button>
+            </div>-->
+          <!--  <div class="navbar-btn-div ">
+              <button class="btn navbar-btn btn-dlm-tb">
+                <i class="icon icons8-star"></i>{{"saveAsBookmark" | translate}}
+              </button>
+            </div>-->
+
+            <div class="navbar-btn-div ">
+              <button class="btn navbar-btn btn-dlm-tb">
+                <i class="icon icons8-globe"></i>{{"createIncident" | translate}}
+              </button>
+            </div>
+
+            <!--<div class="navbar-btn-div ">
+              <button class="btn navbar-btn btn-dlm-tb">
+                <i class="icon icons8-data-backup-filled"></i>{{"performExport" | translate}}
+              </button>
+            </div>-->
+
+            <div class="navbar-btn-div splits">
+                <button class="btn navbar-btn btn-dlm-tb"
+                        ng-class="{'active':showSplitsPresets}"
+                        ng-click="showSplitsPresets = !showSplitsPresets">
+
+                    <span class="icon icons8-thumbnails"></span> <span class="icons8-expand-arrow"></span>
+                </button>
+            </div>
+            <div class="navbar-btn-div select-camera">
+                <button class="btn navbar-btn btn-dlm-tb"
+                        ng-class="{'active':showCameraListPopup}"
+                        ng-click="showCameraListPopup = !showCameraListPopup">
+                    <span class="icon icons8-widescreen-tv"></span> <span class="icons8-expand-arrow"></span>
+                </button>
+            </div>
+            <div class="navbar-btn-div info-menu">
+              <button class="btn navbar-btn btn-dlm-tb"
+                      ng-class="{'active':showInfoMenuPopup, 'button-disable': !isVideoMounted }"
+                      ng-click="showMenuInfo();">
+                <span class="icon icons8-info"></span>
+              </button>
+
+            </div>
+    </nav>
+</div>
+
+<video-panes></video-panes>
+<dropdown-camera-list></dropdown-camera-list>
+<info-menu></info-menu>
+<dropdown-splits-presets></dropdown-splits-presets>
